@@ -343,7 +343,7 @@ Public Class Form1
 
 #End Region
 
-        Dim Details = objDatos.DataDetalleFacturaXML(data.Item("F_NUMERO").ToString, data.Item("F_Serie").ToString)
+        Dim Details = objDatos.DataDetalleFacturaXML(data.Item("F_NUMERO").ToString, data.Item("tipo_docto").ToString)
 
 #Region "Detalle"
         If Details.Tables(0).Rows.Count > 0 Then
