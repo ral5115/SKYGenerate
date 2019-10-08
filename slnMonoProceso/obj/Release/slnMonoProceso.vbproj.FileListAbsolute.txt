@@ -1,0 +1,54 @@
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe.config
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.pdb
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.xml
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Form1.resources
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Resources.resources
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.GenerateResource.Cache
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.exe
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.xml
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.pdb
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Disponible Medellin\Desktop\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbprojResolveAssemblyReference.cache
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe.config
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.xml
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.GenerateResource.Cache
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.exe
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.xml
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Google Drive\Integraciones Cali\En Proceso\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe.config
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.exe
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\bin\Release\slnMonoProceso.xml
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.GenerateResource.Cache
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.exe
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.xml
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Google Drive\Integraciones Cali\Entregados\118 Templo de la Moda\Codigo Fuente\slnMonoProceso\slnMonoProceso\obj\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\Release\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\Release\slnMonoProceso.vbprojAssemblyReference.cache

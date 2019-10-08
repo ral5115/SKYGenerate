@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="EjecucionManual" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Respuestas_X_Pantalla" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="strConexionODBC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DSN=micros;Uid=micros;Pwd=DMICMSR40;</Value>
+    </Setting>
+    <Setting Name="slnMonoProceso_wsGenerarPlano_wsGenerarPlano" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/GTIntegration/ServiciosWeb/wsGenerarPlano.asmx</Value>
+    </Setting>
+    <Setting Name="slnMonoProceso_wsUnoEE_WSUNOEE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.75.65.2/WSUNOEE/WSUNOEE.asmx</Value>
+    </Setting>
+    <Setting Name="strConexionOracle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server = ERPTEST; User Id=gentrerp; pwd = gentrerp; Unicode = true;</Value>
+    </Setting>
+    <Setting Name="ruta_xml" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Reynel\Desktop\Debug\CCC\XML\</Value>
+    </Setting>
+    <Setting Name="usuario_Certicamara" Type="System.String" Scope="User">
+      <Value Profile="(Default)">admin_camaracali</Value>
+    </Setting>
+    <Setting Name="pass_Certicamara" Type="System.String" Scope="User">
+      <Value Profile="(Default)">camaracali001</Value>
+    </Setting>
+    <Setting Name="ruta_xml_final" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Reynel\Desktop\Debug\CCC\XML\</Value>
+    </Setting>
+    <Setting Name="slnMonoProceso_wsGT_wsGenerarPlano" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.0.1.29/GTIntegration/ServiciosWeb/wsGenerarPlano.asmx</Value>
+    </Setting>
+    <Setting Name="strConexionIntermedia" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server = ERPTEST; User Id=gentrerp; pwd = gentrerp; Unicode = true;Connection Lifetime=30;</Value>
+    </Setting>
+    <Setting Name="strConexionGT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=siesa.generictransfer.com,1434;Initial Catalog=GTintegrationCCC;User ID=admincali;Password=4217;Integrated Security=False;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,27 @@
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x64\Release\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x64\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x64\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x64\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x64\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x64\Release\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Release\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Release\slnMonoProceso.XmlSerializers.dll
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Release\slnMonoProceso.XmlSerializers.dll

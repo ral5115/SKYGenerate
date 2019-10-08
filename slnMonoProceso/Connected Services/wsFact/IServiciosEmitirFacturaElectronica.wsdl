@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" name="IServiciosEmitirFacturaElectronica" targetNamespace="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AtributoAdicional" type="tns:atributoAdicional" />
+      <xs:element name="crearFacturaElectronica" type="tns:crearFacturaElectronica" />
+      <xs:element name="crearFacturaElectronicaConAdjuntos" type="tns:crearFacturaElectronicaConAdjuntos" />
+      <xs:element name="crearFacturaElectronicaConAdjuntosResponse" type="tns:crearFacturaElectronicaConAdjuntosResponse" />
+      <xs:element name="crearFacturaElectronicaResponse" type="tns:crearFacturaElectronicaResponse" />
+      <xs:complexType name="crearFacturaElectronicaConAdjuntos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="facturaElectronicaCanonica" type="tns:facturaElectronicaWS" />
+          <xs:element minOccurs="0" name="facturaEspecializada" type="tns:documentoPersonalizado" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="facturaElectronicaWS">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:documentoElectronicoWS">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoMoneda" type="xs:string" />
+              <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+              <xs:element minOccurs="0" name="descuentos" type="tns:descuentoWS" />
+              <xs:element minOccurs="0" name="fechaExpedicion" type="xs:string" />
+              <xs:element minOccurs="0" name="fechaVencimiento" type="xs:string" />
+              <xs:element minOccurs="0" name="icoterms" type="xs:string" />
+              <xs:element minOccurs="0" name="identificadorConsecutivo" type="xs:long" />
+              <xs:element minOccurs="0" name="identificadorResolucion" type="xs:string" />
+              <xs:element minOccurs="0" name="mediosPago" type="xs:string" />
+              <xs:element minOccurs="0" name="nombreSucursal" type="xs:string" />
+              <xs:element minOccurs="0" name="numeracionResolucionWS" type="tns:numeracionResolucionWS" />
+              <xs:element minOccurs="0" name="ordenCompra" type="xs:string" />
+              <xs:element minOccurs="0" name="perfilEmision" type="tns:enumPerfilPersona" />
+              <xs:element minOccurs="0" name="perfilUsuario" type="tns:enumPerfilPersona" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:productoCertifacturaWS" />
+              <xs:element minOccurs="0" name="subtotalFactura" type="xs:decimal" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="subtotalesImpuestosDeduccion" nillable="true" type="tns:impuestoDeduccionWS" />
+              <xs:element minOccurs="0" name="tipoFactura" type="xs:string" />
+              <xs:element minOccurs="0" name="totalAnticipos" type="xs:decimal" />
+              <xs:element minOccurs="0" name="totalDescuentos" type="xs:decimal" />
+              <xs:element minOccurs="0" name="totalFactura" type="xs:decimal" />
+              <xs:element minOccurs="0" name="totalOtrosCostos" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="documentoElectronicoWS" abstract="true">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificacionReceptor" type="tns:identificacionClienteWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="descuentoWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="prontoPago" nillable="true" type="tns:prontoPagoWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="prontoPagoWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="fecha" type="xs:string" />
+          <xs:element minOccurs="0" name="valorPagar" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="numeracionResolucionWS">
+        <xs:sequence>
+          <xs:element name="desde" type="xs:long" />
+          <xs:element name="hasta" type="xs:long" />
+          <xs:element minOccurs="0" name="prefijo" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="productoCertifacturaWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="atributosAdicionalesProd" type="tns:atributosAdicionalesProductoWS" />
+          <xs:element minOccurs="0" name="cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+          <xs:element minOccurs="0" name="identificador" type="xs:string" />
+          <xs:element minOccurs="0" name="imprimible" type="xs:boolean" />
+          <xs:element minOccurs="0" name="impuestoAlConsumo" type="tns:impuestoAlConsumo" />
+          <xs:element minOccurs="0" name="impuestoICA" type="tns:impuestoICA" />
+          <xs:element minOccurs="0" name="impuestoIVA" type="tns:impuestoIVA" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="listaImpuestosDeducciones" nillable="true" type="tns:impuestoDeduccionWS" />
+          <xs:element minOccurs="0" name="pagable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="valorUnitario" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atributosAdicionalesProductoWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="atributoAdicionalProd" nillable="true" type="tns:atributoAdicionalProdWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atributoAdicionalProdWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombreAtributo" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="impuestoAlConsumo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="porcentual" type="xs:decimal" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="impuestoICA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="impuestoIVA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="porcentual" type="xs:decimal" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="impuestoDeduccionWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="baseGravable" type="xs:decimal" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="valor" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="identificacionClienteWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoDocumentoDian" type="xs:int" />
+          <xs:element minOccurs="0" name="numeroIdentificacion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="documentoPersonalizado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AtributosAdicionales" type="tns:atributosAdicionales" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atributosAdicionales">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AtributoAdicional" type="tns:atributoAdicional" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="atributoAdicional">
+        <xs:sequence>
+          <xs:element name="nombreAtributo" type="xs:string" />
+          <xs:element name="valor" type="xs:string" />
+          <xs:element name="tipo" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearFacturaElectronicaConAdjuntosResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearFacturaElectronica">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="facturaElectronicaCanonica" type="tns:facturaElectronicaWS" />
+          <xs:element minOccurs="0" name="facturaEspecializada" type="tns:documentoPersonalizado" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearFacturaElectronicaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="enumPerfilPersona">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CLIENTE" />
+          <xs:enumeration value="ADQUIRIENTE" />
+          <xs:enumeration value="PROVEEDOR" />
+          <xs:enumeration value="PLATAFORMA" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ExcepcionServiciosTecnica" type="tns:ExcepcionServiciosTecnica" />
+      <xs:complexType name="ExcepcionServiciosTecnica">
+        <xs:sequence>
+          <xs:element name="codigo" nillable="true" type="xs:string" />
+          <xs:element name="campo" nillable="true" type="xs:string" />
+          <xs:element name="mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ExcepcionServicios" type="tns:ExcepcionServicios" />
+      <xs:complexType name="ExcepcionServicios">
+        <xs:sequence>
+          <xs:element name="codigo" nillable="true" type="xs:string" />
+          <xs:element name="campo" nillable="true" type="xs:string" />
+          <xs:element name="mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ExcepcionServiciosNegocio" type="tns:ExcepcionServiciosNegocio" />
+      <xs:complexType name="ExcepcionServiciosNegocio">
+        <xs:sequence>
+          <xs:element name="codigo" nillable="true" type="xs:string" />
+          <xs:element name="campo" nillable="true" type="xs:string" />
+          <xs:element name="mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ExcepcionServicioTecnica">
+    <wsdl:part name="ExcepcionServicioTecnica" element="ns1:ExcepcionServiciosTecnica" />
+  </wsdl:message>
+  <wsdl:message name="crearFacturaElectronicaConAdjuntos">
+    <wsdl:part name="parameters" element="ns1:crearFacturaElectronicaConAdjuntos" />
+  </wsdl:message>
+  <wsdl:message name="ExcepcionServicioNegocio">
+    <wsdl:part name="ExcepcionServicioNegocio" element="ns1:ExcepcionServiciosNegocio" />
+  </wsdl:message>
+  <wsdl:message name="crearFacturaElectronicaResponse">
+    <wsdl:part name="parameters" element="ns1:crearFacturaElectronicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcepcionServicios">
+    <wsdl:part name="ExcepcionServicios" element="ns1:ExcepcionServicios" />
+  </wsdl:message>
+  <wsdl:message name="crearFacturaElectronicaConAdjuntosResponse">
+    <wsdl:part name="parameters" element="ns1:crearFacturaElectronicaConAdjuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearFacturaElectronica">
+    <wsdl:part name="parameters" element="ns1:crearFacturaElectronica" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciosEmitirFacturaElectronica">
+    <wsdl:operation name="crearFacturaElectronicaConAdjuntos">
+      <wsdl:input name="crearFacturaElectronicaConAdjuntos" message="ns1:crearFacturaElectronicaConAdjuntos" />
+      <wsdl:output name="crearFacturaElectronicaConAdjuntosResponse" message="ns1:crearFacturaElectronicaConAdjuntosResponse" />
+      <wsdl:fault name="ExcepcionServicioTecnica" message="ns1:ExcepcionServicioTecnica" />
+      <wsdl:fault name="ExcepcionServicioNegocio" message="ns1:ExcepcionServicioNegocio" />
+      <wsdl:fault name="ExcepcionServicios" message="ns1:ExcepcionServicios" />
+    </wsdl:operation>
+    <wsdl:operation name="crearFacturaElectronica">
+      <wsdl:input name="crearFacturaElectronica" message="ns1:crearFacturaElectronica" />
+      <wsdl:output name="crearFacturaElectronicaResponse" message="ns1:crearFacturaElectronicaResponse" />
+      <wsdl:fault name="ExcepcionServicioTecnica" message="ns1:ExcepcionServicioTecnica" />
+      <wsdl:fault name="ExcepcionServicioNegocio" message="ns1:ExcepcionServicioNegocio" />
+      <wsdl:fault name="ExcepcionServicios" message="ns1:ExcepcionServicios" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

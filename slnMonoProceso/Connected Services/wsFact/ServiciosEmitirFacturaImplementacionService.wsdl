@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.certicamara.com/certifactura/ws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" name="ServiciosEmitirFacturaImplementacionService" targetNamespace="http://www.certicamara.com/certifactura/ws" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://contrato.factura.webservices.servicios.certifactura.certicamara.com/" location="https://preproduccionv4.certifactura.co/CertiFacturaServicios/ServiciosEmitirFacturaElectronica?wsdl=IServiciosEmitirFacturaElectronica.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="ServiciosEmitirFacturaImplementacionServiceSoapBinding" type="ns1:IServiciosEmitirFacturaElectronica">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFacturaElectronicaConAdjuntos">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="crearFacturaElectronicaConAdjuntos">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="crearFacturaElectronicaConAdjuntosResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionServicioTecnica">
+        <soap:fault use="literal" name="ExcepcionServicioTecnica" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExcepcionServicioNegocio">
+        <soap:fault use="literal" name="ExcepcionServicioNegocio" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExcepcionServicios">
+        <soap:fault use="literal" name="ExcepcionServicios" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="crearFacturaElectronica">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="crearFacturaElectronica">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="crearFacturaElectronicaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExcepcionServicioTecnica">
+        <soap:fault use="literal" name="ExcepcionServicioTecnica" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExcepcionServicioNegocio">
+        <soap:fault use="literal" name="ExcepcionServicioNegocio" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExcepcionServicios">
+        <soap:fault use="literal" name="ExcepcionServicios" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosEmitirFacturaImplementacionService">
+    <wsdl:port name="ServiciosEmitirFacturaImplementacionPort" binding="tns:ServiciosEmitirFacturaImplementacionServiceSoapBinding">
+      <soap:address location="https://preproduccionv4.certifactura.co/CertiFacturaServicios/ServiciosEmitirFacturaElectronica" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

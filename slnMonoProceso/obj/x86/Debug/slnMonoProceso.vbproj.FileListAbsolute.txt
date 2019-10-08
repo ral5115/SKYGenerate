@@ -1,0 +1,34 @@
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\bin\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.CoreCompileInputs.cache
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\CCC\LECTOR-XML-ESCRITORIO\slnMonoProcesoCCC\slnMonoProceso\obj\x86\Debug\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe.config
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.pdb
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Form1.resources
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Resources.resources
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.exe
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.xml
+C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.pdb

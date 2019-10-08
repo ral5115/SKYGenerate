@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://contrato.adquiriente.cliente.webservices.servicios.certifactura.certicamara.com/" name="IServiciosAdquiriente" targetNamespace="http://contrato.adquiriente.cliente.webservices.servicios.certifactura.certicamara.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://contrato.adquiriente.cliente.webservices.servicios.certifactura.certicamara.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://contrato.adquiriente.cliente.webservices.servicios.certifactura.certicamara.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="actualizarAdquirienteACliente" type="tns:actualizarAdquirienteACliente" />
+      <xs:element name="actualizarAdquirienteAClienteResponse" type="tns:actualizarAdquirienteAClienteResponse" />
+      <xs:element name="crearAdquirienteConUsuarioACliente" type="tns:crearAdquirienteConUsuarioACliente" />
+      <xs:element name="crearAdquirienteConUsuarioAClienteResponse" type="tns:crearAdquirienteConUsuarioAClienteResponse" />
+      <xs:complexType name="actualizarAdquirienteACliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adquiriente" type="tns:identificacionAdquirienteWS" />
+          <xs:element minOccurs="0" name="informacionAdquiriente" type="tns:adquirienteActualizaWS" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="camposDinamicosAdquiriente" type="tns:camposDinamicosWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="identificacionAdquirienteWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoDian" type="xs:int" />
+          <xs:element minOccurs="0" name="digitoDeVerificacion" type="xs:int" />
+          <xs:element minOccurs="0" name="numeroIdentificacion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adquirienteActualizaWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+          <xs:element minOccurs="0" name="ciudadExtranjera" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoCiudad" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoDepartamento" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoPais" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="emailPrincipal" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="emailSecundarios" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fax" type="xs:string" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="razonSocial" type="xs:string" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="camposDinamicosWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nombreCampo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="valor" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="actualizarAdquirienteAClienteResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearAdquirienteConUsuarioACliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adquiriente" type="tns:adquirienteWS" />
+          <xs:element minOccurs="0" name="usuario" type="tns:usuarioAdquirienteWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="adquirienteWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acuerdoFisicoFacturacionElectronica" type="xs:boolean" />
+          <xs:element minOccurs="0" name="adjuntarPdfNotificaciones" type="xs:boolean" />
+          <xs:element minOccurs="0" name="adjuntarXmlNotificaciones" type="xs:boolean" />
+          <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="camposDinamicosAdquirientes" nillable="true" type="tns:camposDinamicosWS" />
+          <xs:element name="cantidadDiasAceptacionAutomatica" type="xs:int" />
+          <xs:element minOccurs="0" name="ciudadExtranjera" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoCiudad" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoDepartamento" type="xs:string" />
+          <xs:element minOccurs="0" name="codigoPais" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="emailPrincipal" type="xs:string" />
+          <xs:element minOccurs="0" name="emailSecundarios" type="xs:string" />
+          <xs:element minOccurs="0" name="enviarCorreoCertificado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="enviarCorreoDeBienvenida" type="xs:boolean" />
+          <xs:element minOccurs="0" name="enviarFisico" type="xs:boolean" />
+          <xs:element minOccurs="0" name="enviarNotificaciones" type="xs:boolean" />
+          <xs:element minOccurs="0" name="enviarPlataformaFacturacion" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fax" type="xs:string" />
+          <xs:element minOccurs="0" name="formatoFactura" type="xs:string" />
+          <xs:element minOccurs="0" name="idClienteCreador" type="xs:string" />
+          <xs:element name="identificacionAdquirienteWS" type="tns:identificacionAdquirienteWS" />
+          <xs:element minOccurs="0" name="naturaleza" type="tns:enumNaturalezaPersona" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+          <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+          <xs:element minOccurs="0" name="razonSocial" type="xs:string" />
+          <xs:element minOccurs="0" name="registradoEnCatalogo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoEstablecimiento" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoObligacion" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoUsuarioAduanero" type="xs:string" />
+          <xs:element minOccurs="0" name="tiposRepresentacion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="usuarioAdquirienteWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+          <xs:element minOccurs="0" name="generarContrasena" type="xs:boolean" />
+          <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearAdquirienteConUsuarioAClienteResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="enumNaturalezaPersona">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="JURIDICA" />
+          <xs:enumeration value="NATURAL" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ExcepcionServiciosTecnica" type="tns:ExcepcionServiciosTecnica" />
+      <xs:complexType name="ExcepcionServiciosTecnica">
+        <xs:sequence>
+          <xs:element name="codigo" nillable="true" type="xs:string" />
+          <xs:element name="campo" nillable="true" type="xs:string" />
+          <xs:element name="mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ExcepcionServiciosNegocio" type="tns:ExcepcionServiciosNegocio" />
+      <xs:complexType name="ExcepcionServiciosNegocio">
+        <xs:sequence>
+          <xs:element name="codigo" nillable="true" type="xs:string" />
+          <xs:element name="campo" nillable="true" type="xs:string" />
+          <xs:element name="mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="crearAdquirienteConUsuarioACliente">
+    <wsdl:part name="parameters" element="ns1:crearAdquirienteConUsuarioACliente" />
+  </wsdl:message>
+  <wsdl:message name="crearAdquirienteConUsuarioAClienteResponse">
+    <wsdl:part name="parameters" element="ns1:crearAdquirienteConUsuarioAClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcepcionServicioNegocio">
+    <wsdl:part name="ExcepcionServicioNegocio" element="ns1:ExcepcionServiciosNegocio" />
+  </wsdl:message>
+  <wsdl:message name="actualizarAdquirienteAClienteResponse">
+    <wsdl:part name="parameters" element="ns1:actualizarAdquirienteAClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcepcionServicioTecnica">
+    <wsdl:part name="ExcepcionServicioTecnica" element="ns1:ExcepcionServiciosTecnica" />
+  </wsdl:message>
+  <wsdl:message name="actualizarAdquirienteACliente">
+    <wsdl:part name="parameters" element="ns1:actualizarAdquirienteACliente" />
+  </wsdl:message>
+  <wsdl:portType name="IServiciosAdquiriente">
+    <wsdl:operation name="actualizarAdquirienteACliente">
+      <wsdl:input name="actualizarAdquirienteACliente" message="ns1:actualizarAdquirienteACliente" />
+      <wsdl:output name="actualizarAdquirienteAClienteResponse" message="ns1:actualizarAdquirienteAClienteResponse" />
+      <wsdl:fault name="ExcepcionServicioTecnica" message="ns1:ExcepcionServicioTecnica" />
+      <wsdl:fault name="ExcepcionServicioNegocio" message="ns1:ExcepcionServicioNegocio" />
+    </wsdl:operation>
+    <wsdl:operation name="crearAdquirienteConUsuarioACliente">
+      <wsdl:input name="crearAdquirienteConUsuarioACliente" message="ns1:crearAdquirienteConUsuarioACliente" />
+      <wsdl:output name="crearAdquirienteConUsuarioAClienteResponse" message="ns1:crearAdquirienteConUsuarioAClienteResponse" />
+      <wsdl:fault name="ExcepcionServicioTecnica" message="ns1:ExcepcionServicioTecnica" />
+      <wsdl:fault name="ExcepcionServicioNegocio" message="ns1:ExcepcionServicioNegocio" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

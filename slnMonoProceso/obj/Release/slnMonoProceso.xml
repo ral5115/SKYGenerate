@@ -1,0 +1,551 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+slnMonoProceso
+</name>
+</assembly>
+<members>
+<member name="T:slnMonoProceso.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:slnMonoProceso.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:slnMonoProceso.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:slnMonoProceso.clsConfiguracion.#ctor">
+ <summary>
+ Se usa en diferentes puntos del software para cargar los parametros del sistema, si se agrega una nueva variable es necesario modificar el codigo
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:slnMonoProceso.clsCorreo.asuntoCorreo">
+ <summary>
+ Estandar Asunto del Correos
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:slnMonoProceso.clsTarea.ConfiguracionTareaGT(System.Data.DataSet@,System.Boolean@)">
+ <summary>
+ Recuperar la informacion de configuracion de la tarea 
+ </summary>
+ <param name="dsConfiguracionGT"></param>
+ <remarks></remarks>
+</member>
+<member name="M:slnMonoProceso.clsTarea.DatosOrigenSQL(System.Data.DataSet,System.Data.DataSet@)">
+ <summary>
+ Recuperar la informacion de la fuente de datos para generar el plano
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:slnMonoProceso.clsTarea.LogFin(System.Int32)">
+ <summary>
+ Actualiza el log Principal indicando la terminacion de los procesos
+ </summary>
+ <param name="procesosParalelos">Numero de procesos paralelos a realizar</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:slnMonoProceso.wsAdq.ExcepcionServiciosTecnica">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosTecnica.codigo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosTecnica.campo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosTecnica.mensaje">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.camposDinamicosWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.camposDinamicosWS.nombreCampo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.camposDinamicosWS.valor">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.adquirienteActualizaWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.apellidos">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.ciudadExtranjera">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.codigoCiudad">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.codigoDepartamento">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.codigoPais">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.direccion">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.emailPrincipal">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.emailSecundarios">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.fax">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.nombre">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.razonSocial">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteActualizaWS.telefono">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.identificacionAdquirienteWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.identificacionAdquirienteWS.codigoDian">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.identificacionAdquirienteWS.codigoDianSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.identificacionAdquirienteWS.digitoDeVerificacion">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.identificacionAdquirienteWS.digitoDeVerificacionSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.identificacionAdquirienteWS.numeroIdentificacion">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.ExcepcionServiciosNegocio">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosNegocio.codigo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosNegocio.campo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.ExcepcionServiciosNegocio.mensaje">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.adquirienteWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.acuerdoFisicoFacturacionElectronica">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.acuerdoFisicoFacturacionElectronicaSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.adjuntarPdfNotificaciones">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.adjuntarPdfNotificacionesSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.adjuntarXmlNotificaciones">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.adjuntarXmlNotificacionesSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.apellidos">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.camposDinamicosAdquirientes">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.cantidadDiasAceptacionAutomatica">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.ciudadExtranjera">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.codigoCiudad">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.codigoDepartamento">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.codigoPais">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.direccion">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.emailPrincipal">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.emailSecundarios">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarCorreoCertificado">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarCorreoCertificadoSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarCorreoDeBienvenida">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarCorreoDeBienvenidaSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarFisico">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarFisicoSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarNotificaciones">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarNotificacionesSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarPlataformaFacturacion">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.enviarPlataformaFacturacionSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.fax">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.formatoFactura">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.idClienteCreador">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.identificacionAdquirienteWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.naturaleza">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.naturalezaSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.nombre">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.observaciones">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.razonSocial">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.registradoEnCatalogo">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.registradoEnCatalogoSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.telefono">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.tipoEstablecimiento">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.tipoObligacion">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.tipoUsuarioAduanero">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.adquirienteWS.tiposRepresentacion">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.enumNaturalezaPersona">
+<remarks/>
+</member>
+<member name="F:slnMonoProceso.wsAdq.enumNaturalezaPersona.JURIDICA">
+<remarks/>
+</member>
+<member name="F:slnMonoProceso.wsAdq.enumNaturalezaPersona.NATURAL">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsAdq.usuarioAdquirienteWS">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.usuarioAdquirienteWS.contrasena">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.usuarioAdquirienteWS.generarContrasena">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.usuarioAdquirienteWS.generarContrasenaSpecified">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsAdq.usuarioAdquirienteWS.nombreUsuario">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.wsGenerarPlano">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.#ctor">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsGT.wsGenerarPlano.GenerarPlanoXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosDSCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasDSCompleted">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.GenerarPlanoXML(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String@,System.String@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.GenerarPlanoXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.GenerarPlanoXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosXML(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosDS(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosDSAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosDSAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasXML(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasXMLAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasDS(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasDSAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.ImportarDatosTablasDSAsync(System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Data.DataSet,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsGT.wsGenerarPlano.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.GenerarPlanoXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.GenerarPlanoXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.GenerarPlanoXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.GenerarPlanoXMLCompletedEventArgs.Path">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.GenerarPlanoXMLCompletedEventArgs.strResultado">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosXMLCompletedEventArgs.Path">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosDSCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosDSCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosDSCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosDSCompletedEventArgs.Path">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosTablasXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosTablasXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosTablasXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosTablasXMLCompletedEventArgs.Path">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosTablasDSCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsGT.ImportarDatosTablasDSCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosTablasDSCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsGT.ImportarDatosTablasDSCompletedEventArgs.Path">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.WSUNOEE">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.#ctor">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsUnoEE.WSUNOEE.CrearConexionXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsUnoEE.WSUNOEE.EjecutarConsultaXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsUnoEE.WSUNOEE.LeerEsquemaParametrosCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsUnoEE.WSUNOEE.ImportarXMLCompleted">
+<remarks/>
+</member>
+<member name="E:slnMonoProceso.wsUnoEE.WSUNOEE.SiesaWEBContabilizarCompleted">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.CrearConexionXML(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.CrearConexionXMLAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.CrearConexionXMLAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.EjecutarConsultaXML(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.EjecutarConsultaXMLAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.EjecutarConsultaXMLAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.LeerEsquemaParametros(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.LeerEsquemaParametrosAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.LeerEsquemaParametrosAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.ImportarXML(System.String,System.Int16@)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.ImportarXMLAsync(System.String,System.Int16)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.ImportarXMLAsync(System.String,System.Int16,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.SiesaWEBContabilizar(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.SiesaWEBContabilizarAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.SiesaWEBContabilizarAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:slnMonoProceso.wsUnoEE.WSUNOEE.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.CrearConexionXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.CrearConexionXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.CrearConexionXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.EjecutarConsultaXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.EjecutarConsultaXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.EjecutarConsultaXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.LeerEsquemaParametrosCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.LeerEsquemaParametrosCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.LeerEsquemaParametrosCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.ImportarXMLCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.ImportarXMLCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.ImportarXMLCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.ImportarXMLCompletedEventArgs.printTipoError">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.SiesaWEBContabilizarCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:slnMonoProceso.wsUnoEE.SiesaWEBContabilizarCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:slnMonoProceso.wsUnoEE.SiesaWEBContabilizarCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>
