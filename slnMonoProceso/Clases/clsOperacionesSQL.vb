@@ -14,17 +14,18 @@ Public Class clsOperacionesSQL
         Dim ds As New DataSet
         Dim cmd As New OracleCommand("Select 2 F_Ambiente,
                                        F311_Id_Cia F_Cia,
-                                       05 F_TipoServicio,
+                                       '05' F_TipoServicio,
                                        case f350_id_clase_docto
                                             when 27 then '01'
                                             when 25 then '91'
                                             when 22 then '01'
                                        end  f_tipo,
-                                       T350_Fact.F350_Id_Tipo_Docto tipo_docto,
-                                       f022_prefijo_fe F_Serie,  
+	                                   T350_Fact.F350_Id_Tipo_Docto tipo_docto,
+                                       f022_prefijo_fe F_Serie, 
                                        T350_Fact.F350_Consec_Docto F_Numero,
                                        '' f_NumeroInterno,
-	                                   TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
+	    
+                                       TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
 	                                   F010_Razon_Social F_Establecimiento,
 	                                   F285_Descripcion F_Ptoemis,
                                        '41' F_MedioPago,
@@ -37,20 +38,20 @@ Public Class clsOperacionesSQL
                                             else '2'
                                        end  f_TipoNegociacion,
                                        1 F_Tipocontribuyente, 
-	                                   '05' F_Regimencontable,
+	                                   05 F_Regimencontable,
   	                                   f010_nit F_Idemisor,
 	                                   f010_razon_social F_Nmbemisor,
 	                                   f010_razon_social F_Primernombre,
    	                                   'TpoObl' Tpocdgintemisor,
-                                       '0-11' f_CdgIntEmisor,
+                                       'O-11' f_CdgIntEmisor,
                                        '' F_Cdgsucursal,
                                        T285_Cont.F015_Direccion1 F_Calle,
 	                                   'CO' F_Pais,
 	                                   T285_Dpto.F012_id F_Dpto,
-	                                   T285_Ciu.F013_id F_Ciudad,
+	                                   T285_Dpto.F012 || T285_Ciu.F013_id F_Ciudad,
 	                                   '11001' F_Codigopostalfiscal,
                                        T200_Fact.f200_ind_tipo_tercero F_Tipocontribuyenter, 
-	                                   '04' F_Regimencontabler,
+	                                   04 F_Regimencontabler,
                                        case f203_id
                                             when 'Z' then '11'
                                             when 'T' then '12'
@@ -67,11 +68,11 @@ Public Class clsOperacionesSQL
                                        T285_Cont.f015_telefono Telefono,
                                        T285_Cont.f015_fax Fax,
                                        'TpoObl' f_TpoCdgIntRecep,
-                                       '0-99' f_CdgIntRecep,
+                                       'O-99' f_CdgIntRecep,
                                        T200_ContCli.f015_direccion1 f_DomFiscalRcpCalle,
                                        T200_Dpto.F012_Id f_DomFiscalRcpDpto,
                                        'CO' f_DomFiscalRcpPais,
-                                       T200_Ciu.f013_id  f_DomFiscalRcpCiu,
+                                       T200_Dpto.F012_Id || T200_Ciu.f013_id f_DomFiscalRcpCiu,
                                        '11001' f_DomFiscalRcpCodPostal,
                                        T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
                                        T200_ContCli.f015_contacto f_ContactoReceptorCont,
@@ -90,14 +91,14 @@ Public Class clsOperacionesSQL
 	                                   19 F_Tasaimp,
 	                                   F311_Vlr_Bruto - F311_Vlr_Dscto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montobaseimp,
 	                                   F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
-                                        '01' f_CAETipo,  
-                                        f022_prefijo_fe f_CAESerie, 
+                                       '01' f_CAETipo,  
+                                        f022_prefijo f_CAESerie, 
                                         f022_cons_inicial f_CAENumeroInicial, 
                                         f022_cons_final f_CAENumeroFinal, 
                                         f022_nro_resolucion f_CAENroResolucion, 
-                                        f022_fecha_resolucion f_CAEFechaResolucion, 
+                                        f022_fecha_resolucion f_CAEFechaResolucion,
                                         'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
-                                        '' f_CAEPlazo
+                                        f022_fecha_resolucion_vcto f_CAEPlazo
                                 From  T350_Co_Docto_Contable T350_Fact
                                 Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
                                 Inner Join T200_Mm_Terceros T200_Fact On T200_Fact.F200_Rowid = F311_Rowid_Tercero
