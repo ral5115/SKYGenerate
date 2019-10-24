@@ -48,7 +48,7 @@ Public Class clsOperacionesSQL
                                        T285_Cont.F015_Direccion1 F_Calle,
 	                                   'CO' F_Pais,
 	                                   T285_Dpto.F012_id F_Dpto,
-	                                   T285_Dpto.F012 || T285_Ciu.F013_id F_Ciudad,
+	                                   T285_Dpto.F012_id || T285_Ciu.F013_id F_Ciudad,
 	                                   '11001' F_Codigopostalfiscal,
                                        T200_Fact.f200_ind_tipo_tercero F_Tipocontribuyenter, 
 	                                   04 F_Regimencontabler,
