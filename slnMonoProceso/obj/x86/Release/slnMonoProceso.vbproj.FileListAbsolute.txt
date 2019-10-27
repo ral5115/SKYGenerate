@@ -37,7 +37,6 @@ C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoPro
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.xml
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.pdb
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.XmlSerializers.dll
-C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.vbprojAssemblyReference.cache
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\projetr\fnlc\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Release\slnMonoProceso.exe.config
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\projetr\fnlc\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Release\slnMonoProceso.exe
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\projetr\fnlc\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Release\slnMonoProceso.XmlSerializers.dll
