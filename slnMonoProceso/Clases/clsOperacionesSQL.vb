@@ -98,7 +98,7 @@ Public Class clsOperacionesSQL
                                             f022_nro_resolucion f_CAENroResolucion, 
                                             f022_fecha_resolucion f_CAEFechaResolucion,
                                             'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
-                                            TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY/MM/DD') f_CAEPlazo 
+                                            TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo 
 
                                             From  T350_Co_Docto_Contable T350_Fact
                                             Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
@@ -123,8 +123,7 @@ Public Class clsOperacionesSQL
                                             Left  Join T012_Mm_Deptos T200_Dpto On T200_Dpto.F012_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Dpto.F012_Id = T200_ContCli.F015_Id_Depto
                                             Left  Join T013_Mm_Ciudades T200_Ciu On T200_Ciu.F013_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Ciu.F013_Id_Depto = T200_ContCli.F015_Id_Depto And T200_Ciu.F013_Id = T200_ContCli.F015_Id_Ciudad
                                             Where T350_Fact.F350_Ind_Estado = 1
-                                            and T350_Fact.F350_Consec_Docto between 1 and 2 and T350_Fact.F350_Id_Tipo_Docto ='STT' and T350_Fact.F350_Id_co ='01'
-                                and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
+                                           and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
 
@@ -163,7 +162,7 @@ Public Class clsOperacionesSQL
                                          f320_vlr_bruto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_PrcBrutoItem,
                                          f320_vlr_neto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )  f_PrcNetoItem,
                                          '01' TipoImp,
-                                         19 f_TasaImp, 
+                                         case when f320_vlr_imp > 0 then 19 else 0 end f_TasaImp, 
                                          (f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )  f_MontoBaseImp,
                                          f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_MontoImp,
                                          (f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_MontoTotalItem 
@@ -180,8 +179,7 @@ Public Class clsOperacionesSQL
                                           and f311_id_cia = 1 
                                           AND f311_ind_tipo_factura = 2
                                           AND f028_id_grupo_clase_docto IN ( 203, 2101 )
-                                    and t350_fact.f350_consec_docto in (1,2) and T350_Fact.F350_Id_Tipo_Docto = 'STT'
-                                        and t350_fact.f350_consec_docto = " & numFact & " and T350_Fact.F350_Id_Tipo_Docto = " & "'" & tipoDoc & "'", oracleconnetion)
+                                         and t350_fact.f350_consec_docto = " & numFact & " and T350_Fact.F350_Id_Tipo_Docto = " & "'" & tipoDoc & "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
 
