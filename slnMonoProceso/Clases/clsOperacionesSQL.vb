@@ -88,7 +88,7 @@ Public Class clsOperacionesSQL
                                             F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
                                             F_Monto_Escrito(F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) F_Vlrpalabras,
                                             '01' F_Tipoimp,
-                                            19 F_Tasaimp,
+                                            case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
                                             F311_Vlr_Bruto - F311_Vlr_Dscto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montobaseimp,
                                             F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
                                             '01' f_CAETipo,  
@@ -98,7 +98,7 @@ Public Class clsOperacionesSQL
                                             f022_nro_resolucion f_CAENroResolucion, 
                                             f022_fecha_resolucion f_CAEFechaResolucion,
                                             'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
-                                            TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo 
+                                            TO_CHAR(f022_fecha_resolucion_vcto, 'DD-MM-YYYY') f_CAEPlazo 
 
                                             From  T350_Co_Docto_Contable T350_Fact
                                             Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
