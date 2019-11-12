@@ -98,7 +98,7 @@ Public Class clsOperacionesSQL
                                             f022_nro_resolucion f_CAENroResolucion, 
                                             f022_fecha_resolucion f_CAEFechaResolucion,
                                             'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
-                                            TO_CHAR(f022_fecha_resolucion_vcto, 'DD-MM-YYYY') f_CAEPlazo 
+                                            TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo 
 
                                             From  T350_Co_Docto_Contable T350_Fact
                                             Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
