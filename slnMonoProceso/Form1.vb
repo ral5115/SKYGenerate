@@ -422,12 +422,23 @@ Public Class Form1
 
             Dim Referencia As XElement = New XElement("Referencia")
             documento.Add(Referencia)
-            Dim NroLinRef As XElement = New XElement("NroLinRef", " ")
+            Dim NroLinRef As XElement = New XElement("NroLinRef", data.Item("NroLinRef").ToString)
             Referencia.Add(NroLinRef)
-            Dim TpoDocRef As XElement = New XElement("TpoDocRef", " ")
+            Dim TpoDocRef As XElement = New XElement("TpoDocRef", data.Item("TpoDocRef").ToString)
             Referencia.Add(TpoDocRef)
-            Dim NumeroRef As XElement = New XElement("NumeroRef", " ")
+            Dim SerieRef As XElement = New XElement("SerieRef", data.Item("SerieRef").ToString)
+            Referencia.Add(SerieRef)
+            Dim NumeroRef As XElement = New XElement("NumeroRef", data.Item("NumeroRef").ToString)
             Referencia.Add(NumeroRef)
+            Dim FechaRef As XElement = New XElement("FechaRef", data.Item("FechaRef").ToString)
+            Referencia.Add(SerieRef)
+            Dim CodRef As XElement = New XElement("CodRef", data.Item("CodRef").ToString)
+            Referencia.Add(CodRef)
+            Dim RazonRef As XElement = New XElement("RazonRef", data.Item("RazonRef").ToString)
+            Referencia.Add(RazonRef)
+            Dim ECB01 As XElement = New XElement("ECB01", data.Item("ECB01").ToString)
+            Referencia.Add(ECB01)
+
 
 #End Region
 
@@ -484,8 +495,8 @@ Public Class Form1
 #End Region
 #End Region
 
-            MsgBox("va a guardar en X")
-            xml.Save("10.75.10.12\X:\" & data.Item("tipo_docto").ToString & data.Item("f_Numero").ToString & ".xml")
+            'MsgBox("va a guardar en X")
+            xml.Save("C:\Users\Public\Documents\" & data.Item("tipo_docto").ToString & data.Item("f_Numero").ToString & ".xml")
 
         Catch ex As Exception
             MsgBox(ex.Message)

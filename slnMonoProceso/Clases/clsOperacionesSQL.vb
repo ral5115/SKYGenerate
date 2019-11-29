@@ -14,11 +14,17 @@ Public Class clsOperacionesSQL
         Dim ds As New DataSet
         Dim cmd As New OracleCommand("Select 2 F_Ambiente,
                                         F311_Id_Cia F_Cia,
-                                        '05' F_TipoServicio,
                                         case f350_id_clase_docto
-                                        when 27 then '01'
-                                        when 25 then '91'
-                                        when 22 then '01'
+	                                        when 25 then '11'
+			                                when 27 then '05'
+			                                when 22 then '05'
+			                                when 149 then '11'
+	                                    end F_TipoServicio,
+                                        case f350_id_clase_docto
+                                            when 27 then '01'
+                                            when 25 then '91'
+                                            when 22 then '01'
+			                                when 149 then '92'  
                                         end  f_tipo,
                                         T350_Fact.F350_Id_Tipo_Docto tipo_docto,
                                         f022_prefijo F_Serie, 
@@ -83,13 +89,13 @@ Public Class clsOperacionesSQL
                                         F311_Id_Moneda_Docto F_Moneda,
                                         F311_Tasa_Conv F_Tasaconver,
                                         F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Subtotal, 
-                                        ROUND(((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19,3) As F_Mntbase,
+                                        ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0) As F_Mntbase,
                                         F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
                                         F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
                                         F_Monto_Escrito(F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) F_Vlrpalabras,
                                         '01' F_Tipoimp,
                                         case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
-                                        ROUND(((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19,3)  F_Montobaseimp,
+                                        ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0)  F_Montobaseimp,
                                         F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
                                         '01' f_CAETipo,  
                                         f022_prefijo f_CAESerie, 
@@ -98,31 +104,65 @@ Public Class clsOperacionesSQL
                                         f022_nro_resolucion f_CAENroResolucion, 
                                         f022_fecha_resolucion f_CAEFechaResolucion,
                                         'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
-                                        TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo 
+                                        TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
+                                case f350_id_clase_docto 
+                                        when 25  then '1'
+	                                    when 149 then '1'
+                                end NroLinRef,
+                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_co_docto_base' 
+                                        when 149 then'co030_co_docto_base' end ,1) TpoDocRef,
+       
+                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_tipo_docto_base' 
+                                        when 149 then'co030_tipo_docto_base' end ,1) SerieRef,
+       
+                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_docto_base' 
+                                        when 149 then'co030_docto_base' end ,1) NumeroRef,
+       
+                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_fecha_docto_base' 
+                                        when 149 then'co030_fecha_docto_base' end ,2) FechaRef,
+       
+                                case f350_id_clase_docto 
+                                        when 25  then '1'
+	                                    when 149 then '1'
+                                end CodRef,
 
-                                        From  T350_Co_Docto_Contable T350_Fact
-                                        Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
-                                        Inner Join T200_Mm_Terceros T200_Fact On T200_Fact.F200_Rowid = F311_Rowid_Tercero
-                                        Inner Join T201_Mm_Clientes T201_Fact On T201_Fact.F201_Rowid_Tercero = F311_Rowid_Tercero
-                                        And T201_Fact.F201_Id_Sucursal = F311_Id_Sucursal_Cli
-                                        Inner Join T208_Mm_Condiciones_Pago On F311_Id_Cond_Pago = F208_Id And F208_Id_Cia = F311_Id_Cia 
-                                        Inner Join T285_Co_Centro_Op On F285_Id_Cia = F311_Id_Cia And F285_Id = T350_Fact.F350_Id_Co
-                                        inner join t028_mm_clases_documento on f028_id = f350_id_clase_docto
-                                        inner join t203_mm_tipo_ident on f203_id_cia = T200_Fact.f200_id_cia and f203_id = T200_Fact.f200_id_tipo_ident
-                                        inner join t022_mm_consecutivos on f022_id_cia = t350_fact.f350_id_cia and f022_id_co = t350_fact.f350_id_co  and f022_id_tipo_docto = t350_fact.f350_id_tipo_docto  
+                                f_generico_hallar_movto_ent_2(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO019'
+                                        when 149 then 'EUNOECO015' end, case f350_id_clase_docto when 25  then 'co019_concepto_nd' 
+                                        when 149 then'co015_concepto_nc' end ,7,0) RazonRef,
+       
+                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_uuid_docto_base' 
+                                        when 149 then'co030_uuid_docto_base' end ,1) ECB01
+	   
+	    
 
-                                        Left  Join T010_Mm_Companias On F010_Id = F311_Id_Cia
-                                        Left  Join T015_Mm_Contactos T285_Cont On T285_Cont.F015_Rowid = F285_Rowid_Contacto
-                                        Left  Join T015_Mm_Contactos T200_ContCli On T200_ContCli.F015_Rowid = T200_Fact.f200_rowid_contacto
+                                From  T350_Co_Docto_Contable T350_Fact
+                                Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
+                                Inner Join T200_Mm_Terceros T200_Fact On T200_Fact.F200_Rowid = F311_Rowid_Tercero
+                                Inner Join T201_Mm_Clientes T201_Fact On T201_Fact.F201_Rowid_Tercero = F311_Rowid_Tercero
+                                And T201_Fact.F201_Id_Sucursal = F311_Id_Sucursal_Cli
+                                Inner Join T208_Mm_Condiciones_Pago On F311_Id_Cond_Pago = F208_Id And F208_Id_Cia = F311_Id_Cia 
+                                Inner Join T285_Co_Centro_Op On F285_Id_Cia = F311_Id_Cia And F285_Id = T350_Fact.F350_Id_Co
+                                inner join t028_mm_clases_documento on f028_id = f350_id_clase_docto
+                                inner join t203_mm_tipo_ident on f203_id_cia = T200_Fact.f200_id_cia and f203_id = T200_Fact.f200_id_tipo_ident
+                                inner join t022_mm_consecutivos on f022_id_cia = t350_fact.f350_id_cia and f022_id_co = t350_fact.f350_id_co  and f022_id_tipo_docto = t350_fact.f350_id_tipo_docto  
 
-                                        Left  Join T011_Mm_Paises T285_Pais On T285_Pais.F011_Id = T285_Cont.F015_Id_Pais
-                                        Left  Join T012_Mm_Deptos T285_Dpto On T285_Dpto.F012_Id_Pais = T285_Cont.F015_Id_Pais And T285_Dpto.F012_Id = T285_Cont.F015_Id_Depto
-                                        Left  Join T013_Mm_Ciudades T285_Ciu On T285_Ciu.F013_Id_Pais = T285_Cont.F015_Id_Pais And T285_Ciu.F013_Id_Depto = T285_Cont.F015_Id_Depto And T285_Ciu.F013_Id = T285_Cont.F015_Id_Ciudad
+                                Left  Join T010_Mm_Companias On F010_Id = F311_Id_Cia
+                                Left  Join T015_Mm_Contactos T285_Cont On T285_Cont.F015_Rowid = F285_Rowid_Contacto
+                                Left  Join T015_Mm_Contactos T200_ContCli On T200_ContCli.F015_Rowid = T200_Fact.f200_rowid_contacto
 
-                                        Left  Join T011_Mm_Paises T200_Pais On T200_Pais.F011_Id = T200_ContCli.F015_Id_Pais
-                                        Left  Join T012_Mm_Deptos T200_Dpto On T200_Dpto.F012_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Dpto.F012_Id = T200_ContCli.F015_Id_Depto
-                                        Left  Join T013_Mm_Ciudades T200_Ciu On T200_Ciu.F013_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Ciu.F013_Id_Depto = T200_ContCli.F015_Id_Depto And T200_Ciu.F013_Id = T200_ContCli.F015_Id_Ciudad
-                                        Where T350_Fact.F350_Ind_Estado = 1
+                                Left  Join T011_Mm_Paises T285_Pais On T285_Pais.F011_Id = T285_Cont.F015_Id_Pais
+                                Left  Join T012_Mm_Deptos T285_Dpto On T285_Dpto.F012_Id_Pais = T285_Cont.F015_Id_Pais And T285_Dpto.F012_Id = T285_Cont.F015_Id_Depto
+                                Left  Join T013_Mm_Ciudades T285_Ciu On T285_Ciu.F013_Id_Pais = T285_Cont.F015_Id_Pais And T285_Ciu.F013_Id_Depto = T285_Cont.F015_Id_Depto And T285_Ciu.F013_Id = T285_Cont.F015_Id_Ciudad
+
+                                Left  Join T011_Mm_Paises T200_Pais On T200_Pais.F011_Id = T200_ContCli.F015_Id_Pais
+                                Left  Join T012_Mm_Deptos T200_Dpto On T200_Dpto.F012_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Dpto.F012_Id = T200_ContCli.F015_Id_Depto
+                                Left  Join T013_Mm_Ciudades T200_Ciu On T200_Ciu.F013_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Ciu.F013_Id_Depto = T200_ContCli.F015_Id_Depto And T200_Ciu.F013_Id = T200_ContCli.F015_Id_Ciudad
+                                Where T350_Fact.F350_Ind_Estado = 1
                                            and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
