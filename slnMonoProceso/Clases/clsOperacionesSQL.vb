@@ -103,7 +103,11 @@ Public Class clsOperacionesSQL
                                         f022_cons_final f_CAENumeroFinal, 
                                         f022_nro_resolucion f_CAENroResolucion, 
                                         f022_fecha_resolucion f_CAEFechaResolucion,
-                                        'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c' f_CAEClaveTC, 
+                                        case f350_id_clase_docto
+                                        when 25 then '20191'
+                                        when 27 then 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+                                        when 22 then 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+                                        when 149 then '20191'  end f_CAEClaveTC, 
                                         TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
                                 case f350_id_clase_docto 
                                         when 25  then '1'
@@ -163,7 +167,7 @@ Public Class clsOperacionesSQL
                                 Left  Join T012_Mm_Deptos T200_Dpto On T200_Dpto.F012_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Dpto.F012_Id = T200_ContCli.F015_Id_Depto
                                 Left  Join T013_Mm_Ciudades T200_Ciu On T200_Ciu.F013_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Ciu.F013_Id_Depto = T200_ContCli.F015_Id_Depto And T200_Ciu.F013_Id = T200_ContCli.F015_Id_Ciudad
                                 Where T350_Fact.F350_Ind_Estado = 1
-                                           and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
+                                 and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
 
