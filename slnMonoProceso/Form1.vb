@@ -431,7 +431,7 @@ Public Class Form1
             Dim NumeroRef As XElement = New XElement("NumeroRef", data.Item("NumeroRef").ToString)
             Referencia.Add(NumeroRef)
             Dim FechaRef As XElement = New XElement("FechaRef", data.Item("FechaRef").ToString)
-            Referencia.Add(SerieRef)
+            Referencia.Add(FechaRef)
             Dim CodRef As XElement = New XElement("CodRef", data.Item("CodRef").ToString)
             Referencia.Add(CodRef)
             Dim RazonRef As XElement = New XElement("RazonRef", data.Item("RazonRef").ToString)
