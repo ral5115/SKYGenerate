@@ -92,7 +92,7 @@ Public Class clsOperacionesSQL
                                         ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0) As F_Mntbase,
                                         F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
                                         F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
-                                        F_Monto_Escrito(F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) F_Vlrpalabras,
+                                        F_Monto_Escrito(F311_Vlr_Neto) F_Vlrpalabras,
                                         '01' F_Tipoimp,
                                         case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
                                         ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0)  F_Montobaseimp,
