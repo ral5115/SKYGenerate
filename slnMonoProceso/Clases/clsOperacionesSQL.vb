@@ -205,10 +205,10 @@ Public Class clsOperacionesSQL
                                          '' f_UnmdItem,
                                          f320_vlr_bruto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_PrcBrutoItem,
                                          f320_vlr_neto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )  f_PrcNetoItem,
-                                         case when f320_vlr_imp > 0 then '01' else '' end TipoImp,
-                                         case when f320_vlr_imp > 0 then 19 else '' end f_TasaImp, 
-                                         case when f320_vlr_imp > 0 then (f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) else '' end f_MontoBaseImp,
-                                         case when f320_vlr_imp > 0 then f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) else '' end f_MontoImp,
+                                         case when f320_vlr_imp > 0 then '01' else ' ' end TipoImp,
+                                         case when f320_vlr_imp > 0 then '19' else ' ' end f_TasaImp, 
+                                         case when f320_vlr_imp > 0 then to_char((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else ' ' end f_MontoBaseImp,
+                                         case when f320_vlr_imp > 0 then to_char(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else  ' ' end f_MontoImp,
                                          (f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_MontoTotalItem 
       
                                     from  t350_co_docto_contable t350_fact
