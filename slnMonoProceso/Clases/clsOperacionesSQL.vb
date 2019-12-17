@@ -83,7 +83,7 @@ Public Class clsOperacionesSQL
                                         T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
                                         T200_ContCli.f015_contacto f_ContactoReceptorCont,
                                         T200_ContCli.f015_contacto f_ContactoReceptorDesc,
-                                        f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'co011_correo_fe',1) f_ContactoReceptorEmail,
+                                        f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1) f_ContactoReceptorEmail,
                                         T200_ContCli.f015_telefono f_ContactoReceptorTel,
                                         T200_ContCli.f015_fax f_ContactoReceptorFax,
                                         F311_Id_Moneda_Docto F_Moneda,
