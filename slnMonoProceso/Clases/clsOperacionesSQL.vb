@@ -75,14 +75,14 @@ Public Class clsOperacionesSQL
                                         T285_Cont.f015_fax Fax,
                                         'TpoObl' f_TpoCdgIntRecep,
                                         'O-99' f_CdgIntRecep,
-                                        T200_ContCli.f015_direccion1 f_DomFiscalRcpCalle,
+                                        nvl(T200_ContCli.f015_direccion1,T201_ContCli.f015_direccion1) f_DomFiscalRcpCalle,
                                         T200_Dpto.F012_Id f_DomFiscalRcpDpto,
                                         'CO' f_DomFiscalRcpPais,
                                         T200_Dpto.F012_Id || T200_Ciu.f013_id f_DomFiscalRcpCiu,
                                         '11001' f_DomFiscalRcpCodPostal,
                                         T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
-                                        T200_ContCli.f015_contacto f_ContactoReceptorCont,
-                                        T200_ContCli.f015_contacto f_ContactoReceptorDesc,
+                                        nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto) f_ContactoReceptorCont,
+                                        nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto) f_ContactoReceptorDesc,
                                         f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1) f_ContactoReceptorEmail,
                                         T200_ContCli.f015_telefono f_ContactoReceptorTel,
                                         T200_ContCli.f015_fax f_ContactoReceptorFax,
@@ -169,7 +169,7 @@ Public Class clsOperacionesSQL
                                 Left  Join T010_Mm_Companias On F010_Id = F311_Id_Cia
                                 Left  Join T015_Mm_Contactos T285_Cont On T285_Cont.F015_Rowid = F285_Rowid_Contacto
                                 Left  Join T015_Mm_Contactos T200_ContCli On T200_ContCli.F015_Rowid = T200_Fact.f200_rowid_contacto
-
+                                Left  Join T015_Mm_Contactos T201_ContCli On T201_ContCli.F015_Rowid = T201_Fact.f201_rowid_contacto
                                 Left  Join T011_Mm_Paises T285_Pais On T285_Pais.F011_Id = T285_Cont.F015_Id_Pais
                                 Left  Join T012_Mm_Deptos T285_Dpto On T285_Dpto.F012_Id_Pais = T285_Cont.F015_Id_Pais And T285_Dpto.F012_Id = T285_Cont.F015_Id_Depto
                                 Left  Join T013_Mm_Ciudades T285_Ciu On T285_Ciu.F013_Id_Pais = T285_Cont.F015_Id_Pais And T285_Ciu.F013_Id_Depto = T285_Cont.F015_Id_Depto And T285_Ciu.F013_Id = T285_Cont.F015_Id_Ciudad
