@@ -32,11 +32,15 @@ Partial Class Form1
         Me.TxtTipoDoc = New System.Windows.Forms.TextBox()
         Me.TxtCO = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.DTPFechaDesde = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DTPFechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnGenerar
         '
-        Me.btnGenerar.Location = New System.Drawing.Point(56, 175)
+        Me.btnGenerar.Location = New System.Drawing.Point(52, 234)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(154, 23)
         Me.btnGenerar.TabIndex = 0
@@ -118,11 +122,47 @@ Partial Class Form1
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Centro Operacion:"
         '
+        'DTPFechaDesde
+        '
+        Me.DTPFechaDesde.Location = New System.Drawing.Point(26, 191)
+        Me.DTPFechaDesde.Name = "DTPFechaDesde"
+        Me.DTPFechaDesde.Size = New System.Drawing.Size(86, 20)
+        Me.DTPFechaDesde.TabIndex = 10
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(23, 175)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(74, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Fecha Desde:"
+        '
+        'DTPFechaHasta
+        '
+        Me.DTPFechaHasta.Location = New System.Drawing.Point(141, 190)
+        Me.DTPFechaHasta.Name = "DTPFechaHasta"
+        Me.DTPFechaHasta.Size = New System.Drawing.Size(100, 20)
+        Me.DTPFechaHasta.TabIndex = 12
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(138, 174)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(71, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Fecha Hasta:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(273, 221)
+        Me.ClientSize = New System.Drawing.Size(271, 282)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.DTPFechaHasta)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.DTPFechaDesde)
         Me.Controls.Add(Me.TxtCO)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TxtTipoDoc)
@@ -150,4 +190,8 @@ Partial Class Form1
     Friend WithEvents TxtTipoDoc As TextBox
     Friend WithEvents TxtCO As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents DTPFechaDesde As DateTimePicker
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DTPFechaHasta As DateTimePicker
+    Friend WithEvents Label7 As Label
 End Class

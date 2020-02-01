@@ -32,7 +32,7 @@ Public Class clsOperacionesSQL
                                         '' f_NumeroInterno,
 
                                         TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
-                                        F010_Razon_Social F_Establecimiento,
+                                        SUBSTRING(F010_Razon_Social,1,50) F_Establecimiento,
                                         F285_Descripcion F_Ptoemis,
                                         '41' F_MedioPago,
                                         TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periododesde,
@@ -89,13 +89,13 @@ Public Class clsOperacionesSQL
                                         F311_Id_Moneda_Docto F_Moneda,
                                         F311_Tasa_Conv F_Tasaconver,
                                         F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Subtotal, 
-                                        T350_Fact.f350_total_base_gravable As F_Mntbase,
+                                        (F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then  - 1 Else 1 End)) - F311_Vlr_Dscto As F_Mntbase,
                                         F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
                                         F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
                                         F_Monto_Escrito(F311_Vlr_Neto) F_Vlrpalabras,
                                         '01' F_Tipoimp,
                                         case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
-                                        T350_Fact.f350_total_base_gravable  F_Montobaseimp,
+                                        (F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then  - 1 Else 1 End)) - F311_Vlr_Dscto F_Montobaseimp,
                                         F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
                                         '01' f_CAETipo,  
                                         f022_prefijo f_CAESerie, 
@@ -151,7 +151,8 @@ Public Class clsOperacionesSQL
        
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
                                         when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_uuid_docto_base' 
-                                        when 149 then'co030_uuid_docto_base' end ,1) ECB01
+                                        when 149 then'co030_uuid_docto_base' end ,1) ECB01,
+                                T350_Fact.f350_notas as F_Notas
 	   
 	    
 

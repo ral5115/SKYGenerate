@@ -19,7 +19,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
 
-    Private Function BuildXML(ByVal data As DataRow) As String
+    Private Function BuildXML(ByVal data As DataRow, ByVal fechaDesde As String, ByVal fechaHasta As String) As String
 
 
         Try
@@ -472,10 +472,14 @@ Public Class Form1
 #Region "Personalizados"
             Dim Personalizados As XElement = New XElement("Personalizados")
             nodoRaiz.Add(Personalizados)
-            'Dim DocPersonalizado As XElement = New XElement("DocPersonalizado", New XAttribute("dteID", "001840826"))
-            'Personalizados.Add(DocPersonalizado)
-            'Dim campoString As XElement = New XElement("campoString", New XAttribute("name", ""), "")
-            'DocPersonalizado.Add(campoString)
+            Dim DocPersonalizado As XElement = New XElement("DocPersonalizado")
+            Personalizados.Add(DocPersonalizado)
+            Dim campoString As XElement = New XElement("campoString", New XAttribute("name", "Notas"), data.Item("F_Notas").ToString)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "FechaDesde"), fechaDesde)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "FechaHasta"), fechaHasta)
+            DocPersonalizado.Add(campoString)
 
             'Dim ImpresionDetalle As XElement = New XElement("ImpresionDetalle")
             '    DocPersonalizado.Add(ImpresionDetalle)
@@ -1201,6 +1205,8 @@ Public Class Form1
         Dim hasta = TxtHasta.Text
         Dim tipoDoc = TxtTipoDoc.Text.ToUpper()
         Dim CO = TxtCO.Text
+        Dim FecDesde = DTPFechaDesde.Value.ToString("yyyy-MM-dd")
+        Dim FecHasta = DTPFechaHasta.Value.ToString("yyyy-MM-dd")
 
         If desde > hasta Then
             MsgBox("El consecutivo desde debe ser menor que hasta...")
@@ -1219,7 +1225,7 @@ Public Class Form1
 
             If factData.Tables(0).Rows.Count > 0 Then
                 For Each item As DataRow In factData.Tables(0).Rows
-                    Dim xml = BuildXML(item)
+                    Dim xml = BuildXML(item, FecDesde, FecHasta)
                 Next
                 MsgBox("Generacion Completa...", MsgBoxStyle.Information, "Generacion de XML")
 
