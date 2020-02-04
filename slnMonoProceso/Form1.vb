@@ -64,13 +64,13 @@ Public Class Form1
             idDoc.Add(MedioPago)
             Dim IDPago As XElement = New XElement("IDPago", "")
             idDoc.Add(IDPago)
-            Dim PeriodoDesde As XElement = New XElement("PeriodoDesde", data.Item("F_PERIODODESDE").ToString)
+            Dim PeriodoDesde As XElement = New XElement("PeriodoDesde", fechaDesde)
             idDoc.Add(PeriodoDesde)
-            Dim PeriodoHasta As XElement = New XElement("PeriodoHasta", data.Item("F_PERIODOHASTA").ToString)
+            Dim PeriodoHasta As XElement = New XElement("PeriodoHasta", fechaHasta)
             idDoc.Add(PeriodoHasta)
             Dim TermPagoCdg As XElement = New XElement("TermPagoCdg", "")
             idDoc.Add(TermPagoCdg)
-            Dim FechaVenc As XElement = New XElement("FechaVenc", data.Item("F_FECHAVENC").ToString)
+            Dim FechaVenc As XElement = New XElement("FechaVenc", fechaHasta)
             idDoc.Add(FechaVenc)
 
             ''area
