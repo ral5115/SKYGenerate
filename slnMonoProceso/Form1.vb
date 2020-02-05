@@ -19,7 +19,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
 
-    Private Function BuildXML(ByVal data As DataRow, ByVal fechaDesde As String, ByVal fechaHasta As String) As String
+    Private Function BuildXML(ByVal data As DataRow, ByVal fechaDesde As String, ByVal fechaHasta As String, ByVal FecVenc As String) As String
 
 
         Try
@@ -70,7 +70,7 @@ Public Class Form1
             idDoc.Add(PeriodoHasta)
             Dim TermPagoCdg As XElement = New XElement("TermPagoCdg", "")
             idDoc.Add(TermPagoCdg)
-            Dim FechaVenc As XElement = New XElement("FechaVenc", fechaHasta)
+            Dim FechaVenc As XElement = New XElement("FechaVenc", FecVenc)
             idDoc.Add(FechaVenc)
 
             ''area
@@ -1207,6 +1207,7 @@ Public Class Form1
         Dim CO = TxtCO.Text
         Dim FecDesde = DTPFechaDesde.Value.ToString("yyyy-MM-dd")
         Dim FecHasta = DTPFechaHasta.Value.ToString("yyyy-MM-dd")
+        Dim FecVenc = DTPFechaVenc.Value.ToString("yyyy-MM-dd")
 
         If desde > hasta Then
             MsgBox("El consecutivo desde debe ser menor que hasta...")
@@ -1225,7 +1226,7 @@ Public Class Form1
 
             If factData.Tables(0).Rows.Count > 0 Then
                 For Each item As DataRow In factData.Tables(0).Rows
-                    Dim xml = BuildXML(item, FecDesde, FecHasta)
+                    Dim xml = BuildXML(item, FecDesde, FecHasta, FecVenc)
                 Next
                 MsgBox("Generacion Completa...", MsgBoxStyle.Information, "Generacion de XML")
 

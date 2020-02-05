@@ -36,11 +36,13 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DTPFechaHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.DTPFechaVenc = New System.Windows.Forms.DateTimePicker()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnGenerar
         '
-        Me.btnGenerar.Location = New System.Drawing.Point(52, 234)
+        Me.btnGenerar.Location = New System.Drawing.Point(55, 280)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(154, 23)
         Me.btnGenerar.TabIndex = 0
@@ -154,11 +156,29 @@ Partial Class Form1
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Fecha Hasta:"
         '
+        'DTPFechaVenc
+        '
+        Me.DTPFechaVenc.Location = New System.Drawing.Point(26, 244)
+        Me.DTPFechaVenc.Name = "DTPFechaVenc"
+        Me.DTPFechaVenc.Size = New System.Drawing.Size(215, 20)
+        Me.DTPFechaVenc.TabIndex = 14
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(23, 228)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(101, 13)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Fecha Vencimiento:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(271, 282)
+        Me.ClientSize = New System.Drawing.Size(271, 332)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.DTPFechaVenc)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.DTPFechaHasta)
         Me.Controls.Add(Me.Label6)
@@ -194,4 +214,6 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents DTPFechaHasta As DateTimePicker
     Friend WithEvents Label7 As Label
+    Friend WithEvents DTPFechaVenc As DateTimePicker
+    Friend WithEvents Label8 As Label
 End Class
