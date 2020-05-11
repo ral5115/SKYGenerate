@@ -345,9 +345,10 @@ Public Class Form1
 
 #End Region
 
-            Dim Details = objDatos.DataDetalleFacturaXML(data.Item("F_NUMERO").ToString, data.Item("tipo_docto").ToString)
+
 
 #Region "Detalle"
+            Dim Details = objDatos.DataDetalleFacturaXML(data.Item("F_NUMERO").ToString, data.Item("tipo_docto").ToString)
             If Details.Tables(0).Rows.Count > 0 Then
                 For Each item As DataRow In Details.Tables(0).Rows
 
@@ -418,6 +419,8 @@ Public Class Form1
             End If
 #End Region
 
+
+
 #Region "Referencia"
 
             Dim Referencia As XElement = New XElement("Referencia")
@@ -439,6 +442,32 @@ Public Class Form1
             Dim ECB01 As XElement = New XElement("ECB01", data.Item("ECB01").ToString)
             Referencia.Add(ECB01)
 
+            Dim DetailsRef = objDatos.DataDetalleReferenciaXML(data.Item("f_codigo_id").ToString)
+            Dim Indice = 1
+
+            If DetailsRef.Tables(0).Rows.Count > 0 Then
+                For Each item As DataRow In DetailsRef.Tables(0).Rows
+                    Referencia = New XElement("Referencia")
+                    documento.Add(Referencia)
+                    NroLinRef = New XElement("NroLinRef", Indice)
+                    Referencia.Add(NroLinRef)
+                    TpoDocRef = New XElement("TpoDocRef", "90")
+                    Referencia.Add(TpoDocRef)
+                    NumeroRef = New XElement("NumeroRef", Indice)
+                    Referencia.Add(NumeroRef)
+                    Dim ECB02 As XElement = New XElement("ECB02", item.Item("Aprobacion").ToString)
+                    Referencia.Add(ECB02)
+                    Dim ECB03 As XElement = New XElement("ECB03", item.Item("Fecha_Consulta").ToString)
+                    Referencia.Add(ECB03)
+                    Dim ECB04 As XElement = New XElement("ECB04", item.Item("Codigo_Banco").ToString)
+                    Referencia.Add(ECB04)
+                    Dim ECB05 As XElement = New XElement("ECB05", item.Item("Numero_Cheque").ToString)
+                    Referencia.Add(ECB05)
+                    Dim ECB06 As XElement = New XElement("ECB06", item.Item("Valor").ToString)
+                    Referencia.Add(ECB06)
+                    Indice = Indice + 1
+                Next
+            End If
 
 #End Region
 
@@ -479,6 +508,25 @@ Public Class Form1
             campoString = New XElement("campoString", New XAttribute("name", "FechaDesde"), fechaDesde)
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "FechaHasta"), fechaHasta)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
+            DocPersonalizado.Add(campoString)
+
+            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo").ToString)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), data.Item("F_Vlrpagar").ToString)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_total"), (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString)
+            DocPersonalizado.Add(campoString)
+
+            Dim valorCheDia = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "P")
+            Dim valorChePos = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "D")
+
+            campoString = New XElement("campoString", New XAttribute("name", "f_tot_cheque_dia"), valorCheDia.Item("valor").ToString)
+            DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_tot_cheque_pos"), valorChePos.Item("valor").ToString)
             DocPersonalizado.Add(campoString)
 
             'Dim ImpresionDetalle As XElement = New XElement("ImpresionDetalle")
