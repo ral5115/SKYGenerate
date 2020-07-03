@@ -424,23 +424,29 @@ Public Class Form1
 #Region "Referencia"
 
             Dim Referencia As XElement = New XElement("Referencia")
-            documento.Add(Referencia)
-            Dim NroLinRef As XElement = New XElement("NroLinRef", data.Item("NroLinRef").ToString)
-            Referencia.Add(NroLinRef)
-            Dim TpoDocRef As XElement = New XElement("TpoDocRef", data.Item("TpoDocRef").ToString)
-            Referencia.Add(TpoDocRef)
-            Dim SerieRef As XElement = New XElement("SerieRef", data.Item("SerieRef").ToString)
-            Referencia.Add(SerieRef)
-            Dim NumeroRef As XElement = New XElement("NumeroRef", data.Item("NumeroRef").ToString)
-            Referencia.Add(NumeroRef)
-            Dim FechaRef As XElement = New XElement("FechaRef", data.Item("FechaRef").ToString)
-            Referencia.Add(FechaRef)
-            Dim CodRef As XElement = New XElement("CodRef", data.Item("CodRef").ToString)
-            Referencia.Add(CodRef)
-            Dim RazonRef As XElement = New XElement("RazonRef", data.Item("RazonRef").ToString)
-            Referencia.Add(RazonRef)
-            Dim ECB01 As XElement = New XElement("ECB01", data.Item("ECB01").ToString)
-            Referencia.Add(ECB01)
+            Dim NroLinRef As XElement
+            Dim TpoDocRef As XElement
+            Dim NumeroRef As XElement
+            If data.Item("NroLinRef").ToString <> "" Then
+                documento.Add(Referencia)
+                NroLinRef = New XElement("NroLinRef", data.Item("NroLinRef").ToString)
+                Referencia.Add(NroLinRef)
+                TpoDocRef = New XElement("TpoDocRef", data.Item("TpoDocRef").ToString)
+                Referencia.Add(TpoDocRef)
+                Dim SerieRef As XElement = New XElement("SerieRef", data.Item("SerieRef").ToString)
+                Referencia.Add(SerieRef)
+                NumeroRef = New XElement("NumeroRef", data.Item("NumeroRef").ToString)
+                Referencia.Add(NumeroRef)
+                Dim FechaRef As XElement = New XElement("FechaRef", data.Item("FechaRef").ToString)
+                Referencia.Add(FechaRef)
+                Dim CodRef As XElement = New XElement("CodRef", data.Item("CodRef").ToString)
+                Referencia.Add(CodRef)
+                Dim RazonRef As XElement = New XElement("RazonRef", data.Item("RazonRef").ToString)
+                Referencia.Add(RazonRef)
+                Dim ECB01 As XElement = New XElement("ECB01", data.Item("ECB01").ToString)
+                Referencia.Add(ECB01)
+            End If
+
 
             Dim DetailsRef = objDatos.DataDetalleReferenciaXML(data.Item("f_codigo_id").ToString)
             Dim Indice = 1
@@ -465,6 +471,8 @@ Public Class Form1
                     Referencia.Add(ECB05)
                     Dim ECB06 As XElement = New XElement("ECB06", item.Item("Valor").ToString)
                     Referencia.Add(ECB06)
+                    Dim ECB07 As XElement = New XElement("ECB07", item.Item("Tipo").ToString) 'cambio
+                    Referencia.Add(ECB07)
                     Indice = Indice + 1
                 Next
             End If
