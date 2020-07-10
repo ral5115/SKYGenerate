@@ -75,7 +75,7 @@ Public Class clsOperacionesSQL
 		                                T285_Cont.f015_fax Fax,
 		                                'TpoObl' f_TpoCdgIntRecep,
 		                                'O-99' f_CdgIntRecep,
-		                                nvl(T200_ContCli.f015_direccion1,T201_ContCli.f015_direccion1) f_DomFiscalRcpCalle,
+		                                nvl(T200_ContCli.f015_direccion1, '') f_DomFiscalRcpCalle,
 		                                T200_Dpto.F012_Id f_DomFiscalRcpDpto,
 		                                'CO' f_DomFiscalRcpPais,
 		                                T200_Dpto.F012_Id || T200_Ciu.f013_id f_DomFiscalRcpCiu,
