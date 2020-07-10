@@ -12,7 +12,7 @@ Public Class clsOperacionesSQL
 
         Dim da As New OracleDataAdapter
         Dim ds As New DataSet
-        Dim cmd As New OracleCommand("Select 2 F_Ambiente,
+        Dim cmd As New OracleCommand("Select 1 F_Ambiente,
                                         F311_Id_Cia F_Cia,
                                         case f350_id_clase_docto
                                        when 25 then '11'
@@ -103,26 +103,24 @@ Public Class clsOperacionesSQL
                                         f022_cons_final f_CAENumeroFinal,
                                         f022_nro_resolucion f_CAENroResolucion,
                                         f022_fecha_resolucion f_CAEFechaResolucion,
+                                        
                                         case f350_id_clase_docto
-                                        when 25 then '20191'
-                                        when 27 then 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                        when 22 then 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                        --case f350_id_clase_docto
-                                   when 25 then '20191'
-                           when 27 then case T350_Fact.F350_Id_Tipo_Docto
-                                             when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
-                             when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-                             when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
-                             else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                        end
-                           when 22 then case T350_Fact.F350_Id_Tipo_Docto
-                                             when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
-                             when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-                             when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
-                             else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                        end
-                           when 149 then '20191'
-                              end f_CAEClaveTC,
+                                                  when 25 then '20191'
+                                              when 27 then case T350_Fact.F350_Id_Tipo_Docto
+                                                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
+                                                        when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
+                                                        when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+                                                        else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+                                                           end
+                                              when 22 then case T350_Fact.F350_Id_Tipo_Docto
+                                                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
+                                                        when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
+                                                        when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+                                                        else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+                                                           end
+                                              when 149 then '20191'
+                                             end f_CAEClaveTC,
+
                                         TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
                                 case f350_id_clase_docto
                                         when 25  then '1'
@@ -214,7 +212,7 @@ Public Class clsOperacionesSQL
         Dim da As New OracleDataAdapter
         Dim ds As New DataSet
         Dim cmd As New OracleCommand("select Rownum NroLin,
-                                           2 f_ambiente,
+                                           1 f_ambiente,
                                            f311_id_cia f_Cia,
                                            t350_fact.f350_id_co f_CdgSucursal,
                                            t350_fact.f350_id_tipo_docto f_Tipo,
