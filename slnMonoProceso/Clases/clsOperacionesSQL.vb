@@ -13,153 +13,153 @@ Public Class clsOperacionesSQL
         Dim da As New OracleDataAdapter
         Dim ds As New DataSet
         Dim cmd As New OracleCommand("Select 1 F_Ambiente,
-                                        F311_Id_Cia F_Cia,
-                                        case f350_id_clase_docto
-                                       when 25 then '11'
-                                       when 27 then '05'
-                                       when 22 then '05'
-                                       when 149 then '11'
-                                           end F_TipoServicio,
-                                                case f350_id_clase_docto
-                                                    when 27 then '01'
-                                                    when 25 then '91'
-                                                    when 22 then '01'
-                                       when 149 then '92'  
-                                        end  f_tipo,
-                                        T350_Fact.F350_Id_Tipo_Docto tipo_docto,
-                                        f022_prefijo F_Serie,
-                                        T350_Fact.F350_Consec_Docto F_Numero,
-                                        '' f_NumeroInterno,
+		                                F311_Id_Cia F_Cia,
+		                                case f350_id_clase_docto
+	                                   when 25 then '11'
+	                                   when 27 then '05'
+	                                   when 22 then '05'
+	                                   when 149 then '11'
+		                                   end F_TipoServicio,
+				                                case f350_id_clase_docto
+					                                when 27 then '01'
+					                                when 25 then '91'
+					                                when 22 then '01'
+	                                   when 149 then '92'  
+		                                end  f_tipo,
+		                                T350_Fact.F350_Id_Tipo_Docto tipo_docto,
+		                                f022_prefijo F_Serie,
+		                                T350_Fact.F350_Consec_Docto F_Numero,
+		                                '' f_NumeroInterno,
 
-                                        TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
-                                        F010_Razon_Social F_Establecimiento,
-                                        F285_Descripcion F_Ptoemis,
-                                        '41' F_MedioPago,
-                                        TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periododesde,
-                                        TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periodohasta,
-                                        1 F_Tiponegociacion,  
-                                        TO_CHAR(F311_Fecha, 'YYYY-MM-DD') F_Fechavenc,
-                                        case f208_id
-                                        when 'CON' then '1'
-                                        else '2'
-                                        end  f_TipoNegociacion,
-                                        1 F_Tipocontribuyente,
-                                        '04' F_Regimencontable,
-                                        f010_nit F_Idemisor,
-                                        f010_razon_social F_Nmbemisor,
-                                        f010_razon_social F_Primernombre,
-                                        'TpoObl' Tpocdgintemisor,
-                                        'O-11' f_CdgIntEmisor,
-                                        '' F_Cdgsucursal,
-                                        T285_Cont.F015_Direccion1 F_Calle,
-                                        'CO' F_Pais,
-                                        T285_Dpto.F012_id F_Dpto,
-                                        T285_Dpto.F012_id || T285_Ciu.F013_id F_Ciudad,
-                                        '11001' F_Codigopostalfiscal,
-                                        T200_Fact.f200_ind_tipo_tercero F_Tipocontribuyenter,
-                                        '48' F_Regimencontabler,
-                                        case f203_id
-                                        when 'Z' then '11'
-                                        when 'T' then '12'
-                                        when 'C' then '13'
-                                        when 'E' then '22'
-                                        when 'N' then '31'
-                                        when 'X' then '42'
-                                        else 'O'
-                                        end f_TipoDocRecep,
-                                        T200_fact.f200_nit f_NroDocRecep,
-                                        T200_fact.f200_razon_social f_NmbRecep,
-                                        T200_fact.f200_razon_social  f_PrimerNombre,
-                                        T285_Cont.f015_email eMail,
-                                        T285_Cont.f015_telefono Telefono,
-                                        T285_Cont.f015_fax Fax,
-                                        'TpoObl' f_TpoCdgIntRecep,
-                                        'O-99' f_CdgIntRecep,
-                                        T200_ContCli.f015_direccion1 f_DomFiscalRcpCalle,
-                                        T200_Dpto.F012_Id f_DomFiscalRcpDpto,
-                                        'CO' f_DomFiscalRcpPais,
-                                        T200_Dpto.F012_Id || T200_Ciu.f013_id f_DomFiscalRcpCiu,
-                                        '11001' f_DomFiscalRcpCodPostal,
-                                        T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
-                                        T200_ContCli.f015_contacto f_ContactoReceptorCont,
-                                        T200_ContCli.f015_contacto f_ContactoReceptorDesc,
-                                        f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'co011_correo_fe',1) f_ContactoReceptorEmail,
-                                        T200_ContCli.f015_telefono f_ContactoReceptorTel,
-                                        T200_ContCli.f015_fax f_ContactoReceptorFax,
-                                        F311_Id_Moneda_Docto F_Moneda,
-                                        F311_Tasa_Conv F_Tasaconver,
-                                        F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Subtotal,
-                                        ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0) As F_Mntbase,
-                                        F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
-                                        F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
-                                        F_Monto_Escrito(F311_Vlr_Neto) F_Vlrpalabras,
-                                        '01' F_Tipoimp,
-                                        case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
-                                        ROUND((((F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End))*100)/19),0)  F_Montobaseimp,
-                                        F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
-                                        '01' f_CAETipo,  
-                                        f022_prefijo f_CAESerie,
-                                        f022_cons_inicial f_CAENumeroInicial,
-                                        f022_cons_final f_CAENumeroFinal,
-                                        f022_nro_resolucion f_CAENroResolucion,
-                                        f022_fecha_resolucion f_CAEFechaResolucion,
-                                        
-                                        case f350_id_clase_docto
-                                                  when 25 then '20191'
-                                              when 27 then case T350_Fact.F350_Id_Tipo_Docto
-                                                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
-                                                        when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-                                                        when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
-                                                        else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                                           end
-                                              when 22 then case T350_Fact.F350_Id_Tipo_Docto
-                                                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
-                                                        when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-                                                        when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
-                                                        else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
-                                                           end
-                                              when 149 then '20191'
-                                             end f_CAEClaveTC,
+		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
+		                                SUBSTRING(F010_Razon_Social,1,50) F_Establecimiento,
+		                                F285_Descripcion F_Ptoemis,
+		                                '41' F_MedioPago,
+		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periododesde,
+		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periodohasta,
+		                                1 F_Tiponegociacion,  
+		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD') F_Fechavenc,
+		                                case f208_id
+		                                when 'CON' then '1'
+		                                else '2'
+		                                end  f_TipoNegociacion,
+		                                1 F_Tipocontribuyente,
+		                                '04' F_Regimencontable,
+		                                f010_nit F_Idemisor,
+		                                f010_razon_social F_Nmbemisor,
+		                                f010_razon_social F_Primernombre,
+		                                'TpoObl' Tpocdgintemisor,
+		                                'O-11' f_CdgIntEmisor,
+		                                '' F_Cdgsucursal,
+		                                T285_Cont.F015_Direccion1 F_Calle,
+		                                'CO' F_Pais,
+		                                T285_Dpto.F012_id F_Dpto,
+		                                T285_Dpto.F012_id || T285_Ciu.F013_id F_Ciudad,
+		                                '11001' F_Codigopostalfiscal,
+		                                T200_Fact.f200_ind_tipo_tercero F_Tipocontribuyenter,
+		                                '48' F_Regimencontabler,
+		                                case f203_id
+		                                when 'Z' then '11'
+		                                when 'T' then '12'
+		                                when 'C' then '13'
+		                                when 'E' then '22'
+		                                when 'N' then '31'
+		                                when 'X' then '42'
+		                                else 'O'
+		                                end f_TipoDocRecep,
+		                                T200_fact.f200_nit f_NroDocRecep,
+		                                T200_fact.f200_razon_social f_NmbRecep,
+		                                T200_fact.f200_razon_social  f_PrimerNombre,
+		                                T285_Cont.f015_email eMail,
+		                                T285_Cont.f015_telefono Telefono,
+		                                T285_Cont.f015_fax Fax,
+		                                'TpoObl' f_TpoCdgIntRecep,
+		                                'O-99' f_CdgIntRecep,
+		                                nvl(T200_ContCli.f015_direccion1,T201_ContCli.f015_direccion1) f_DomFiscalRcpCalle,
+		                                T200_Dpto.F012_Id f_DomFiscalRcpDpto,
+		                                'CO' f_DomFiscalRcpPais,
+		                                T200_Dpto.F012_Id || T200_Ciu.f013_id f_DomFiscalRcpCiu,
+		                                '11001' f_DomFiscalRcpCodPostal,
+		                                T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
+		                                nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto) f_ContactoReceptorCont,  
+                                        nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto) f_ContactoReceptorDesc, 
+		                                f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1) f_ContactoReceptorEmail,
+		                                T200_ContCli.f015_telefono f_ContactoReceptorTel,
+		                                T200_ContCli.f015_fax f_ContactoReceptorFax,
+		                                F311_Id_Moneda_Docto F_Moneda,
+		                                F311_Tasa_Conv F_Tasaconver,
+		                                F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Subtotal,
+		                                T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntbase,  
+		                                F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
+		                                F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
+		                                F_Monto_Escrito(F311_Vlr_Neto) F_Vlrpalabras,
+		                                '01' F_Tipoimp,
+		                                case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
+		                                T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montobaseimp,
+		                                F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
+		                                '01' f_CAETipo,  
+		                                f022_prefijo f_CAESerie,
+		                                f022_cons_inicial f_CAENumeroInicial,
+		                                f022_cons_final f_CAENumeroFinal,
+		                                f022_nro_resolucion f_CAENroResolucion,
+		                                f022_fecha_resolucion f_CAEFechaResolucion,
+		
+		                                case f350_id_clase_docto
+				                                  when 25 then '20191'
+			                                  when 27 then case T350_Fact.F350_Id_Tipo_Docto
+								                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
+						                                when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
+						                                when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+						                                else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+						                                   end
+			                                  when 22 then case T350_Fact.F350_Id_Tipo_Docto
+								                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
+						                                when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
+						                                when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+						                                else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
+						                                   end
+			                                  when 149 then '20191'
+			                                 end f_CAEClaveTC,
 
-                                        TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
+		                                TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
                                 case f350_id_clase_docto
-                                        when 25  then '1'
+		                                when 25  then '1'
                                    when 149 then '1'
                                 end NroLinRef,
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
-                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_co_docto_base'
-                                        when 149 then'co030_co_docto_base' end ,1) TpoDocRef,
-       
+		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_co_docto_base'
+		                                when 149 then'co030_co_docto_base' end ,1) TpoDocRef,
+
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
-                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_tipo_docto_base'
-                                        when 149 then'co030_tipo_docto_base' end ,1) SerieRef,
-       
+		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_tipo_docto_base'
+		                                when 149 then'co030_tipo_docto_base' end ,1) SerieRef,
+
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
-                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_docto_base'
-                                        when 149 then'co030_docto_base' end ,1) NumeroRef,
-       
+		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_docto_base'
+		                                when 149 then'co030_docto_base' end ,1) NumeroRef,
+
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
-                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_fecha_docto_base'
-                                        when 149 then'co030_fecha_docto_base' end ,2) FechaRef,
-       
+		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_fecha_docto_base'
+		                                when 149 then'co030_fecha_docto_base' end ,2) FechaRef,
+
                                 case f350_id_clase_docto
-                                        when 25  then '1'
+		                                when 25  then '1'
                                    when 149 then '1'
                                 end CodRef,
 
                                 f_generico_hallar_movto_ent_2(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO019'
-                                        when 149 then 'EUNOECO015' end, case f350_id_clase_docto when 25  then 'co019_concepto_nd'
-                                        when 149 then'co015_concepto_nc' end ,7,0) RazonRef,
-       
+		                                when 149 then 'EUNOECO015' end, case f350_id_clase_docto when 25  then 'co019_concepto_nd'
+		                                when 149 then'co015_concepto_nc' end ,7,0) RazonRef,
+
                                 f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
-                                        when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_uuid_docto_base'
-                                        when 149 then'co030_uuid_docto_base' end ,1) ECB01,
+		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_uuid_docto_base'
+		                                when 149 then'co030_uuid_docto_base' end ,1) ECB01,
 
                                 replace(replace(T350_Fact.f350_notas,chr(10),''),chr(13),'') f_notas,
                                  T200_fact.f200_id as f_codigo_id,
                                 NVL(SALDO.saldo,0) saldo
-                                
-   
+
+
 
                                 From  T350_Co_Docto_Contable T350_Fact
                                 Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
@@ -186,7 +186,7 @@ Public Class clsOperacionesSQL
                                 LEFT JOIN DETALLE_SALDO SALDO ON SALDO.CODIGO_AFILIADO =  T200_Fact.F200_ID
                                 LEFT JOIN DETALLE_PORCENTAJE PORCEN ON PORCEN.AFILIADO =  T200_Fact.F200_ID
                                 Where T350_Fact.F350_Ind_Estado = 1
-                                 and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
+                                and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
 
