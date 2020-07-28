@@ -168,9 +168,9 @@ f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_cl
      when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_uuid_docto_base' 
      when 149 then'co030_uuid_docto_base' end ,1) ECB01,
 
-	 T350_Fact.f350_notas as F_Notas,
-	 T200_fact.f200_id as f_codigo_id   ---REPILAS CAMBIO
-     
+	 replace(replace(T350_Fact.f350_notas,chr(10),''),chr(13),'') as F_Notas,
+	 T200_fact.f200_id as f_codigo_id,   ---REPILAS CAMBIO
+     NVL(SALDO.saldo,0) saldo
       
 
 From  T350_Co_Docto_Contable T350_Fact

@@ -88,7 +88,14 @@ Public Class Form1
             Dim IncotermDs As XElement = New XElement("IncotermDs", "")
             Incoterms.Add(IncotermDs)
 
-            Dim TipoNegociacion As XElement = New XElement("TipoNegociacion", data.Item("F_TIPONEGOCIACION").ToString)
+            Dim tipo_Negociacion
+            If FecVenc = data.Item("F_FECHAEMIS").ToString Then
+                tipo_Negociacion = "1"
+            Else
+                tipo_Negociacion = "2"
+            End If
+
+            Dim TipoNegociacion As XElement = New XElement("TipoNegociacion", tipo_Negociacion)
             idDoc.Add(TipoNegociacion)
             Dim Plazo As XElement = New XElement("Plazo", "")
             idDoc.Add(Plazo)

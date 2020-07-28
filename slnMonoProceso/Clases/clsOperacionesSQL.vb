@@ -88,15 +88,15 @@ Public Class clsOperacionesSQL
 		                                T200_ContCli.f015_fax f_ContactoReceptorFax,
 		                                F311_Id_Moneda_Docto F_Moneda,
 		                                F311_Tasa_Conv F_Tasaconver,
-		                                F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Subtotal,
-		                                T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntbase,  
-		                                F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Mntimp,
-		                                F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) As F_Vlrpagar,
+		                                ABS(F311_Vlr_Bruto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) As F_Subtotal,
+		                                ABS(T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) As F_Mntbase,  
+		                                ABS(F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) As F_Mntimp,
+		                                ABS(F311_Vlr_Neto * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) As F_Vlrpagar,
 		                                F_Monto_Escrito(F311_Vlr_Neto) F_Vlrpalabras,
 		                                '01' F_Tipoimp,
 		                                case when F311_Vlr_Imp > 0 then 19 else 0 end  F_Tasaimp,
-		                                T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montobaseimp,
-		                                F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End) F_Montoimp,
+		                                ABS(T350_Fact.f350_total_base_gravable * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) F_Montobaseimp,
+		                                ABS(F311_Vlr_Imp * (Case F311_Ind_Nat When 0 Then - 1 Else 1 End)) F_Montoimp,
 		                                '01' f_CAETipo,  
 		                                f022_prefijo f_CAESerie,
 		                                f022_cons_inicial f_CAENumeroInicial,
@@ -157,7 +157,7 @@ Public Class clsOperacionesSQL
 
                                 replace(replace(T350_Fact.f350_notas,chr(10),''),chr(13),'') f_notas,
                                  T200_fact.f200_id as f_codigo_id,
-                                NVL(SALDO.saldo,0) saldo
+                                ABS(NVL(SALDO.saldo,0)) saldo
 
 
 
