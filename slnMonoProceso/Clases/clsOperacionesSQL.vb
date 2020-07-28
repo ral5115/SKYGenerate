@@ -222,13 +222,13 @@ Public Class clsOperacionesSQL
                                          f189_descripcion f_DscItem,
                                          f320_cantidad * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_QtyItem,
                                          '' f_UnmdItem,
-                                         f320_vlr_bruto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_PrcBrutoItem,
-                                         f320_vlr_neto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )  f_PrcNetoItem,
+                                         ABS(f320_vlr_bruto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_PrcBrutoItem,
+                                         ABS(f320_vlr_neto * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_PrcNetoItem,
                                          case when f320_vlr_imp > 0 then '01' else ' ' end TipoImp,
                                          case when f320_vlr_imp > 0 then '19' else ' ' end f_TasaImp, 
-                                         case when f320_vlr_imp > 0 then to_char((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else ' ' end f_MontoBaseImp,
-                                         case when f320_vlr_imp > 0 then to_char(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else  ' ' end f_MontoImp,
-                                         (f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_MontoTotalItem 
+                                         ABS(case when f320_vlr_imp > 0 then to_char((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else ' ' end) f_MontoBaseImp,
+                                         ABS(case when f320_vlr_imp > 0 then to_char(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) else  ' ' end) f_MontoImp,
+                                         ABS((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_MontoTotalItem 
       
                                     from  t350_co_docto_contable t350_fact
                                     INNER JOIN T311_CO_DOCTO_FACTURA_SERV ON F350_ROWID=F311_ROWID_DOCTO
@@ -267,7 +267,7 @@ Public Class clsOperacionesSQL
 
         Dim da As New OracleDataAdapter
         Dim ds As New DataSet
-        Dim cmd As New OracleCommand("select sum(valor) valor from DETALLE_CHEQUE
+        Dim cmd As New OracleCommand("select ABS(sum(valor)) valor from DETALLE_CHEQUE
                                          where Afiliado = '" & tercero.Replace(" ", "") & "' and Tipo='" + tipo + "'", oracleconnetion)
         cmd.CommandType = CommandType.Text
         da.SelectCommand = cmd
@@ -299,7 +299,7 @@ Public Class clsOperacionesSQL
                                         to_char(Fecha_Consulta,'YYYY-MM-DD') Fecha_Consulta,
                                         Codigo_Banco,
                                         Numero_Cheque,
-                                        Valor,
+                                        ABS(Valor) Valor,
                                         Tipo
                                         from DETALLE_CHEQUE
                                          where Afiliado = '" & tercero.Replace(" ", "") & "'", oracleconnetion)
