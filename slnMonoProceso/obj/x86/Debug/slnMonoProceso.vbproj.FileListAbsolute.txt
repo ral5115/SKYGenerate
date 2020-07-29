@@ -32,3 +32,14 @@ C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoPro
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.exe
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.xml
 C:\Users\Reynel\Desktop\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.pdb
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe.config
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.exe
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.pdb
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x86\Debug\slnMonoProceso.xml
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Form1.resources
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.Resources.resources
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.vbproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.exe
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.xml
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Debug\slnMonoProceso.pdb

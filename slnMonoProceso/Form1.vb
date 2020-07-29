@@ -89,7 +89,7 @@ Public Class Form1
             Incoterms.Add(IncotermDs)
 
             Dim tipo_Negociacion
-            If FecVenc = data.Item("F_FECHAEMIS").ToString Then
+            If data.Item("F_FECHAEMIS").ToString().Contains(FecVenc) Then
                 tipo_Negociacion = "1"
             Else
                 tipo_Negociacion = "2"
