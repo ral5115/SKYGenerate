@@ -34,7 +34,7 @@ Public Class clsOperacionesSQL
 		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
 		                                SUBSTRING(F010_Razon_Social,1,50) F_Establecimiento,
 		                                F285_Descripcion F_Ptoemis,
-		                                '41' F_MedioPago,
+		                                '42' F_MedioPago,
 		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periododesde,
 		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD')  F_Periodohasta,
 		                                1 F_Tiponegociacion,  
