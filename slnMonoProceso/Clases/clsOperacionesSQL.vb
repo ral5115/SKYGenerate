@@ -31,7 +31,7 @@ Public Class clsOperacionesSQL
 		                                T350_Fact.F350_Consec_Docto F_Numero,
 		                                '' f_NumeroInterno,
 
-		                                TO_CHAR(F311_Fecha, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
+		                                TO_CHAR(F311_ts, 'YYYY-MM-DD HH:MM:SS') F_Fechaemis,
 		                                SUBSTRING(F010_Razon_Social,1,50) F_Establecimiento,
 		                                F285_Descripcion F_Ptoemis,
 		                                '42' F_MedioPago,
