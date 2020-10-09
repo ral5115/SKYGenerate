@@ -518,7 +518,7 @@ Public Class Form1
             nodoRaiz.Add(Personalizados)
             Dim DocPersonalizado As XElement = New XElement("DocPersonalizado")
             Personalizados.Add(DocPersonalizado)
-            Dim campoString As XElement = New XElement("campoString", New XAttribute("name", "Notas"), data.Item("F_Notas").ToString)
+            Dim campoString As XElement = New XElement("campoString", New XAttribute("name", "Notas"), data.Item("F_Notas").ToString.Replace(vbCrLf, " "))
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "FechaDesde"), fechaDesde)
             DocPersonalizado.Add(campoString)

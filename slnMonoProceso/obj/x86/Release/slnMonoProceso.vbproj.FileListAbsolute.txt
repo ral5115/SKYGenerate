@@ -64,3 +64,4 @@ C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMo
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.pdb
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.XmlSerializers.dll
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.vbprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x86\Release\slnMonoProceso.vbproj.CoreCompileInputs.cache

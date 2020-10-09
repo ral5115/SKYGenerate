@@ -44,3 +44,4 @@ C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMo
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.exe
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.xml
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.pdb
+C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.vbproj.CoreCompileInputs.cache
