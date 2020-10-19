@@ -138,7 +138,7 @@ Public Class clsOperacionesSQL
 		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_docto_base'
 		                                when 149 then'co030_docto_base' end ,1) NumeroRef,
 
-                                f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
+                               f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_clase_docto when 25  then 'EUNOECO022'
 		                                when 149 then 'EUNOECO030' end, case f350_id_clase_docto when 25  then 'co022_fecha_docto_base'
 		                                when 149 then'co030_fecha_docto_base' end ,2) FechaRef,
 

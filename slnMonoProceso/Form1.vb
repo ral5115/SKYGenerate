@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Globalization
+Imports System.IO
 Imports System.Net
 Imports System.Security.Cryptography.X509Certificates
 Imports System.ServiceModel
@@ -527,11 +528,12 @@ Public Class Form1
             campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
             DocPersonalizado.Add(campoString)
 
-            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo").ToString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), FormatCurrency(data.Item("saldo").ToString))
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), data.Item("F_Vlrpagar").ToString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), FormatCurrency(data.Item("F_Vlrpagar").ToString))
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_total"), (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_total"), FormatCurrency(Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo"))))
+
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString.PadLeft(10, "0"))
             DocPersonalizado.Add(campoString)
