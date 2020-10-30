@@ -386,6 +386,9 @@ Public Class Form1
                     Dim PrcNetoItem As XElement = New XElement("PrcNetoItem", item.Item("f_PrcNetoItem").ToString)
                     Detalle.Add(PrcNetoItem)
 
+                    Dim porcitem As XElement = New XElement("porcitem", item.Item("porcentaje_aplicar").ToString)
+                    Detalle.Add(porcitem)
+
                     'SubDscto
                     Dim SubDscto As XElement = New XElement("SubDscto") 'PREGUNTAR A CLIENTE
                     Detalle.Add(SubDscto)
