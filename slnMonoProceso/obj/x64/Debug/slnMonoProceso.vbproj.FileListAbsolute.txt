@@ -37,7 +37,6 @@ C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMo
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Debug\slnMonoProceso.exe
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Debug\slnMonoProceso.pdb
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\bin\x64\Debug\slnMonoProceso.xml
-C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.vbprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.Form1.resources
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.Resources.resources
 C:\Users\ASUS\Desktop\Utiles\Debug\Nueva carpeta\Codigo Fuente\SKYGenerate\slnMonoProceso\obj\x64\Debug\slnMonoProceso.vbproj.GenerateResource.cache

@@ -127,14 +127,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\clsConfiguracion.vb" />
-    <Compile Include="Clases\clsCorreo.vb" />
     <Compile Include="Clases\clsOperacionesSQL.vb" />
-    <Compile Include="Clases\clsTarea.vb" />
-    <Compile Include="Clases\FacturaXML.vb" />
-    <Compile Include="Clases\NotaXML.vb" />
-    <Compile Include="Clases\Producto.vb" />
-    <Compile Include="Clases\Tax.vb" />
     <Compile Include="Connected Services\wsAdq\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -171,16 +164,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Web References\wsGT\Reference.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\wsUnoEE\Reference.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -227,52 +210,12 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\wsGT\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Web References\wsGT\wsGenerarPlano.wsdl" />
-    <None Include="Web References\wsUnoEE\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
-    <None Include="Web References\wsUnoEE\WSUNOEE.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://200.21.94.190/WSUNOEE/WSUNOEE.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\wsUnoEE\</RelPath>
-      <UpdateFromURL>http://200.21.94.190/WSUNOEE/WSUNOEE.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>slnMonoProceso_wsUnoEE_WSUNOEE</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost/GTIntegration/ServiciosWeb/wsGenerarPlano.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\wsGT\</RelPath>
-      <UpdateFromURL>http://localhost/GTIntegration/ServiciosWeb/wsGenerarPlano.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>slnMonoProceso_wsGT_wsGenerarPlano</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\wsUnoEE\WSUNOEE.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\wsGT\wsGenerarPlano.disco" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\wsAdq\" />
