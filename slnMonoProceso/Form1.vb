@@ -480,7 +480,7 @@ Public Class Form1
                     Referencia.Add(ECB04)
                     Dim ECB05 As XElement = New XElement("ECB05", item.Item("Numero_Cheque").ToString)
                     Referencia.Add(ECB05)
-                    Dim ECB06 As XElement = New XElement("ECB06", item.Item("Valor").ToString)
+                    Dim ECB06 As XElement = New XElement("ECB06", FormatCurrency(item.Item("Valor").ToString).Replace("$", ""))
                     Referencia.Add(ECB06)
                     Dim ECB07 As XElement = New XElement("ECB07", item.Item("Tipo").ToString) 'cambio
                     Referencia.Add(ECB07)
@@ -533,11 +533,11 @@ Public Class Form1
             campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
             DocPersonalizado.Add(campoString)
 
-            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), FormatCurrency(data.Item("saldo").ToString))
+            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo").ToString)
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), FormatCurrency(data.Item("F_Vlrpagar").ToString))
+            campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), data.Item("F_Vlrpagar").ToString)
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_total"), FormatCurrency(Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo"))))
+            campoString = New XElement("campoString", New XAttribute("name", "f_total"), Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo")))
 
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString.PadLeft(10, "0"))
