@@ -241,7 +241,7 @@ Public Class clsOperacionesSQL
                                         INNER JOIN t028_mm_clases_documento ON f028_id = f350_id_clase_docto
                                         inner join t022_mm_consecutivos on f022_id_cia = t350_fact.f350_id_cia  
                                              and f022_id_co = t350_fact.f350_id_co  and f022_id_tipo_docto = t350_fact.f350_id_tipo_docto 
-                                        left join DETALLE_PORCENTAJE on AFILIADO = f200_id and f320_id_servicio = ""servicio_id""
+                                        left join DETALLE_PORCENTAJE on AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id""
                                             where t350_fact.f350_ind_estado = 1  
                                             and f311_id_cia = 1 
                                             AND f311_ind_tipo_factura = 2
