@@ -176,7 +176,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(271, 332)
+        Me.ClientSize = New System.Drawing.Size(306, 332)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DTPFechaVenc)
         Me.Controls.Add(Me.Label7)
@@ -194,7 +194,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TxtDesde)
         Me.Controls.Add(Me.btnGenerar)
         Me.Name = "Form1"
-        Me.Text = "Generador XML  (v1.09.12.2020)"
+        Me.Text = "Generador XML  (v1.11.10.2020)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

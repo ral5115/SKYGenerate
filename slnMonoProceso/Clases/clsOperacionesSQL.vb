@@ -12,7 +12,7 @@ Public Class clsOperacionesSQL
 
         Dim da As New OracleDataAdapter
         Dim ds As New DataSet
-        Dim cmd As New OracleCommand("Select 1 F_Ambiente,
+        Dim cmd As New OracleCommand("Select distinct 1 F_Ambiente,
 		                                F311_Id_Cia F_Cia,
 		                                case f350_id_clase_docto
 	                                   when 25 then '11'
