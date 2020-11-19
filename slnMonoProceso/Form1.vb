@@ -543,8 +543,8 @@ Public Class Form1
             campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString.PadLeft(10, "0"))
             DocPersonalizado.Add(campoString)
 
-            Dim valorCheDia = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "P")
-            Dim valorChePos = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "D")
+            Dim valorCheDia = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "D")
+            Dim valorChePos = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "P")
 
             campoString = New XElement("campoString", New XAttribute("name", "f_tot_cheque_dia"), valorCheDia.Item("valor").ToString)
             DocPersonalizado.Add(campoString)
