@@ -20,11 +20,12 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
 
-    Private Function BuildXML(ByVal data As DataRow, ByVal fechaDesde As String, ByVal fechaHasta As String, ByVal FecVenc As String) As String
+    Private Function BuildXML(ByVal data As DataRow, ByVal fechaDesde As String, ByVal fechaHasta As String, ByVal FecVenc As String, ByVal IsChecked As Boolean) As String
 
 
         Try
 
+            Dim AfiliadoTabla = objDatos.DataTablaFactura(data.Item("F_NUMERO").ToString)
 
             Dim xml As XDocument = New XDocument(New XDeclaration("1.0", "utf-8", ""))
 #Region "DTE"
@@ -386,8 +387,14 @@ Public Class Form1
                     Dim PrcNetoItem As XElement = New XElement("PrcNetoItem", item.Item("f_PrcNetoItem").ToString)
                     Detalle.Add(PrcNetoItem)
 
-                    Dim porcitem As XElement = New XElement("porcitem", item.Item("porcentaje_aplicar").ToString)
-                    Detalle.Add(porcitem)
+                    'cambio con logica especial 20201127
+                    If IsChecked Then
+                        Dim porcitem As XElement = New XElement("porcitem", item.Item("porcentaje_aplicar_tabla").ToString)
+                        Detalle.Add(porcitem)
+                    Else
+                        Dim porcitem As XElement = New XElement("porcitem", item.Item("porcentaje_aplicar").ToString)
+                        Detalle.Add(porcitem)
+                    End If
 
                     'SubDscto
                     Dim SubDscto As XElement = New XElement("SubDscto") 'PREGUNTAR A CLIENTE
@@ -458,8 +465,13 @@ Public Class Form1
                 Referencia.Add(ECB01)
             End If
 
-
-            Dim DetailsRef = objDatos.DataDetalleReferenciaXML(data.Item("f_codigo_id").ToString)
+            'cambio con logica especial 20201127
+            Dim DetailsRef
+            If IsChecked Then
+                DetailsRef = objDatos.DataDetalleReferenciaXML(AfiliadoTabla.Tables(0).Rows(0).Item("AFILIADO").ToString)
+            Else
+                DetailsRef = objDatos.DataDetalleReferenciaXML(data.Item("f_codigo_id").ToString)
+            End If
             Dim Indice = 1
 
             If DetailsRef.Tables(0).Rows.Count > 0 Then
@@ -533,18 +545,49 @@ Public Class Form1
             campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
             DocPersonalizado.Add(campoString)
 
-            campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo").ToString)
+            'cambio con logica especial 20201127
+            If IsChecked Then
+                campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo_tabla").ToString)
+            Else
+                campoString = New XElement("campoString", New XAttribute("name", "f_saldo_ant"), data.Item("saldo").ToString)
+            End If
             DocPersonalizado.Add(campoString)
+
             campoString = New XElement("campoString", New XAttribute("name", "f_cargos_mes"), data.Item("F_Vlrpagar").ToString)
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_total"), Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo")))
 
-            DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString.PadLeft(10, "0"))
+            'cambio con logica especial 20201127
+            If IsChecked Then
+                campoString = New XElement("campoString", New XAttribute("name", "f_total"), Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo_tabla")))
+            Else
+                campoString = New XElement("campoString", New XAttribute("name", "f_total"), Convert.ToString(data.Item("F_Vlrpagar") + data.Item("saldo")))
+            End If
             DocPersonalizado.Add(campoString)
 
-            Dim valorCheDia = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "D")
-            Dim valorChePos = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "P")
+            'cambio con logica especial 20201127
+            If IsChecked Then
+                campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo_tabla")).ToString.PadLeft(10, "0"))
+            Else
+                campoString = New XElement("campoString", New XAttribute("name", "f_barra"), "(415)7709998000094(8020)" + data.Item("F_Numero").ToString.PadLeft(10, "0") + "(3900)" + (data.Item("F_Vlrpagar") + data.Item("saldo")).ToString.PadLeft(10, "0"))
+            End If
+            DocPersonalizado.Add(campoString)
+
+            'cambio con logica especial 20201127
+            Dim valorCheDia
+            If IsChecked Then
+                valorCheDia = objDatos.SumaCheque(AfiliadoTabla.Tables(0).Rows(0).Item("AFILIADO").ToString, "D")
+            Else
+                valorCheDia = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "D")
+            End If
+
+            'cambio con logica especial 20201127
+            Dim valorChePos
+            If IsChecked Then
+                valorChePos = objDatos.SumaCheque(AfiliadoTabla.Tables(0).Rows(0).Item("AFILIADO").ToString, "P")
+            Else
+                valorChePos = objDatos.SumaCheque(data.Item("f_codigo_id").ToString, "P")
+            End If
+
 
             campoString = New XElement("campoString", New XAttribute("name", "f_tot_cheque_dia"), valorCheDia.Item("valor").ToString)
             DocPersonalizado.Add(campoString)
@@ -587,6 +630,7 @@ Public Class Form1
         Dim FecDesde = DTPFechaDesde.Value.ToString("yyyy-MM-dd")
         Dim FecHasta = DTPFechaHasta.Value.ToString("yyyy-MM-dd")
         Dim FecVenc = DTPFechaVenc.Value.ToString("yyyy-MM-dd")
+        Dim IsChecked = ChkIsChecked.Checked
 
         If desde > hasta Then
             MsgBox("El consecutivo desde debe ser menor que hasta...")
@@ -599,13 +643,14 @@ Public Class Form1
         TxtHasta.Enabled = False
         TxtTipoDoc.Enabled = False
         TxtCO.Enabled = False
+        ChkIsChecked.Enabled = False
 
         Try
             Dim factData As DataSet = objDatos.DataFacturaXML(desde, hasta, tipoDoc, CO)
 
             If factData.Tables(0).Rows.Count > 0 Then
                 For Each item As DataRow In factData.Tables(0).Rows
-                    Dim xml = BuildXML(item, FecDesde, FecHasta, FecVenc)
+                    Dim xml = BuildXML(item, FecDesde, FecHasta, FecVenc, IsChecked)
                 Next
                 MsgBox("Generacion Completa...", MsgBoxStyle.Information, "Generacion de XML")
 
@@ -620,6 +665,7 @@ Public Class Form1
             TxtHasta.Enabled = True
             TxtTipoDoc.Enabled = True
             TxtCO.Enabled = True
+            ChkIsChecked.Enabled = True
         End Try
 
 
@@ -629,7 +675,7 @@ Public Class Form1
         TxtHasta.Enabled = True
         TxtTipoDoc.Enabled = True
         TxtCO.Enabled = True
-
+        ChkIsChecked.Enabled = True
 
 
     End Sub

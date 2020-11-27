@@ -38,11 +38,12 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DTPFechaVenc = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.ChkIsChecked = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'btnGenerar
         '
-        Me.btnGenerar.Location = New System.Drawing.Point(55, 280)
+        Me.btnGenerar.Location = New System.Drawing.Point(26, 280)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(154, 23)
         Me.btnGenerar.TabIndex = 0
@@ -172,11 +173,23 @@ Partial Class Form1
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Fecha Vencimiento:"
         '
+        'ChkIsChecked
+        '
+        Me.ChkIsChecked.AutoSize = True
+        Me.ChkIsChecked.Location = New System.Drawing.Point(198, 282)
+        Me.ChkIsChecked.Name = "ChkIsChecked"
+        Me.ChkIsChecked.Size = New System.Drawing.Size(39, 17)
+        Me.ChkIsChecked.TabIndex = 16
+        Me.ChkIsChecked.Text = "FE"
+        Me.ChkIsChecked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ChkIsChecked.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(306, 332)
+        Me.Controls.Add(Me.ChkIsChecked)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.DTPFechaVenc)
         Me.Controls.Add(Me.Label7)
@@ -194,7 +207,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TxtDesde)
         Me.Controls.Add(Me.btnGenerar)
         Me.Name = "Form1"
-        Me.Text = "Generador XML  (v1.11.10.2020)"
+        Me.Text = "Generador XML  (v1.11.27.2020)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +229,5 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents DTPFechaVenc As DateTimePicker
     Friend WithEvents Label8 As Label
+    Friend WithEvents ChkIsChecked As CheckBox
 End Class

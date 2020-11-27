@@ -158,7 +158,10 @@ Public Class clsOperacionesSQL
                                 --replace(replace(replace(T350_Fact.f350_notas,chr(10),' '),chr(13),' '),'  ',' ') f_notas,
                                  replace(replace(T350_Fact.f350_notas,chr(13)||chr(10), ' '), chr(9), ' ') f_notas,
                                  T200_fact.f200_id as f_codigo_id,
-                                ABS(NVL(SALDO.saldo,0)) saldo
+                                ABS(NVL(SALDO.saldo,0)) saldo,
+                                (select ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
+                                inner join DETALLE_SALDO ds on ds.CODIGO_AFILIADO = df.AFILIADO
+                                where FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
 
 
 
@@ -166,7 +169,7 @@ Public Class clsOperacionesSQL
                                 Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
                                 Inner Join T200_Mm_Terceros T200_Fact On T200_Fact.F200_Rowid = F311_Rowid_Tercero
                                 Inner Join T201_Mm_Clientes T201_Fact On T201_Fact.F201_Rowid_Tercero = F311_Rowid_Tercero
-                                And T201_Fact.F201_Id_Sucursal = F311_Id_Sucursal_Cli
+                                    And T201_Fact.F201_Id_Sucursal = F311_Id_Sucursal_Cli
                                 Inner Join T208_Mm_Condiciones_Pago On F311_Id_Cond_Pago = F208_Id And F208_Id_Cia = F311_Id_Cia
                                 Inner Join T285_Co_Centro_Op On F285_Id_Cia = F311_Id_Cia And F285_Id = T350_Fact.F350_Id_Co
                                 inner join t028_mm_clases_documento on f028_id = f350_id_clase_docto
@@ -231,7 +234,10 @@ Public Class clsOperacionesSQL
                                            case when f320_vlr_imp > 0 then to_char(ABS(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ))) else  ' ' end f_MontoImp,
                                            ABS((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_MontoTotalItem,
                                            (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE
-                                          where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar
+                                          where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar,
+                                          (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE dp
+                                          Inner join DETALLE_FACTURA df on df.AFILIADO=dp.AFILIADO
+                                          where df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar_tabla
       
                                         from  t350_co_docto_contable t350_fact
                                         INNER JOIN T311_CO_DOCTO_FACTURA_SERV ON F350_ROWID=F311_ROWID_DOCTO
@@ -323,5 +329,33 @@ Public Class clsOperacionesSQL
 
     End Function
 
+    Public Function DataTablaFactura(ByVal factura As String) As DataSet
+
+        Dim oracleconnetion = New OracleConnection(My.Settings.strConexionIntermedia)
+
+        oracleconnetion.Open()
+
+        Dim da As New OracleDataAdapter
+        Dim ds As New DataSet
+        Dim cmd As New OracleCommand("select 
+                                        AFILIADO,
+                                        FACTURA
+                                        from DETALLE_FACTURA
+                                         where FACTURA = '" & factura.Replace(" ", "") & "'", oracleconnetion)
+        cmd.CommandType = CommandType.Text
+        da.SelectCommand = cmd
+
+        Try
+            da.Fill(ds, "RefDetailXML")
+
+        Catch ex As Exception
+            'MsgBox(ex.Message)
+        Finally
+            oracleconnetion.Close()
+        End Try
+
+        Return ds
+
+    End Function
 
 End Class
