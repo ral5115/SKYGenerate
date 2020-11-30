@@ -157,7 +157,7 @@ Public Class clsOperacionesSQL
 
                                 --replace(replace(replace(T350_Fact.f350_notas,chr(10),' '),chr(13),' '),'  ',' ') f_notas,
                                  replace(replace(T350_Fact.f350_notas,chr(13)||chr(10), ' '), chr(9), ' ') f_notas,
-                                 T200_fact.f200_id as f_codigo_id,
+                                 rtrim(T200_fact.f200_id) as f_codigo_id,
                                 ABS(NVL(SALDO.saldo,0)) saldo,
                                 (select ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
                                 inner join DETALLE_SALDO ds on ds.CODIGO_AFILIADO = df.AFILIADO
@@ -187,7 +187,7 @@ Public Class clsOperacionesSQL
                                 Left  Join T011_Mm_Paises T200_Pais On T200_Pais.F011_Id = T200_ContCli.F015_Id_Pais
                                 Left  Join T012_Mm_Deptos T200_Dpto On T200_Dpto.F012_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Dpto.F012_Id = T200_ContCli.F015_Id_Depto
                                 Left  Join T013_Mm_Ciudades T200_Ciu On T200_Ciu.F013_Id_Pais = T200_ContCli.F015_Id_Pais And T200_Ciu.F013_Id_Depto = T200_ContCli.F015_Id_Depto And T200_Ciu.F013_Id = T200_ContCli.F015_Id_Ciudad
-                                LEFT JOIN DETALLE_SALDO SALDO ON SALDO.CODIGO_AFILIADO =  T200_Fact.F200_ID
+                                LEFT JOIN DETALLE_SALDO SALDO ON SALDO.CODIGO_AFILIADO =  rtrim(T200_Fact.F200_ID)
                                 LEFT JOIN DETALLE_PORCENTAJE PORCEN ON PORCEN.AFILIADO =  T200_Fact.F200_ID
                                 Where T350_Fact.F350_Ind_Estado = 1
                                 and T350_Fact.F350_Consec_Docto between " & desde & " and " & hasta & " and T350_Fact.F350_Id_Tipo_Docto =" & "'" & tipoDoc & "' and T350_Fact.F350_Id_co ='" & CO & "'", oracleconnetion)

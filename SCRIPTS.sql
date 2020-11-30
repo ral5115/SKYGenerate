@@ -146,7 +146,10 @@ f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_cl
 --replace(replace(replace(T350_Fact.f350_notas,chr(10),' '),chr(13),' '),'  ',' ') f_notas,
  replace(replace(T350_Fact.f350_notas,chr(13)||chr(10), ' '), chr(9), ' ') f_notas,
  T200_fact.f200_id as f_codigo_id,
-ABS(NVL(SALDO.saldo,0)) saldo
+ABS(NVL(SALDO.saldo,0)) saldo,
+(select ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
+inner join DETALLE_SALDO ds on ds.CODIGO_AFILIADO = df.AFILIADO
+where FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
 
 
 
@@ -198,7 +201,10 @@ select Rownum NroLin,
    case when f320_vlr_imp > 0 then to_char(ABS(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ))) else  ' ' end f_MontoImp,
    ABS((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_MontoTotalItem,
    (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE
-  where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar
+  where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar,
+  (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE dp
+  Inner join DETALLE_FACTURA df on df.AFILIADO=dp.AFILIADO
+  where df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar_tabla
 
 from  t350_co_docto_contable t350_fact
 INNER JOIN T311_CO_DOCTO_FACTURA_SERV ON F350_ROWID=F311_ROWID_DOCTO
@@ -232,3 +238,10 @@ inner join t022_mm_consecutivos on f022_id_cia = t350_fact.f350_id_cia
 	Tipo
 	from DETALLE_CHEQUE
 	 where Afiliado = ''
+	 
+ /*************DETALLE FACTURA tabla especial*****************/
+ select 
+AFILIADO,
+FACTURA
+from DETALLE_FACTURA
+ where FACTURA = ''
