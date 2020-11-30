@@ -27,6 +27,8 @@ Public Class Form1
 
             Dim AfiliadoTabla = objDatos.DataTablaFactura(data.Item("F_NUMERO").ToString)
 
+
+
             Dim xml As XDocument = New XDocument(New XDeclaration("1.0", "utf-8", ""))
 #Region "DTE"
             Dim nodoRaiz As XElement = New XElement("DTE", New XAttribute("version", "1.0"))

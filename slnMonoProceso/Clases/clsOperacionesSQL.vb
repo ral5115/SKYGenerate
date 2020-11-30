@@ -161,7 +161,7 @@ Public Class clsOperacionesSQL
                                 ABS(NVL(SALDO.saldo,0)) saldo,
                                 (select ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
                                 inner join DETALLE_SALDO ds on ds.CODIGO_AFILIADO = df.AFILIADO
-                                where FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
+                                where Rownum = 1 and FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
 
 
 
@@ -237,7 +237,7 @@ Public Class clsOperacionesSQL
                                           where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar,
                                           (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE dp
                                           Inner join DETALLE_FACTURA df on df.AFILIADO=dp.AFILIADO
-                                          where df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar_tabla
+                                          where Rownum = 1 and df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar_tabla
       
                                         from  t350_co_docto_contable t350_fact
                                         INNER JOIN T311_CO_DOCTO_FACTURA_SERV ON F350_ROWID=F311_ROWID_DOCTO

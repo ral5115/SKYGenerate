@@ -147,9 +147,10 @@ f_generico_hallar_movto_ent(f350_id_cia,f350_rowid_movto_entidad,case f350_id_cl
  replace(replace(T350_Fact.f350_notas,chr(13)||chr(10), ' '), chr(9), ' ') f_notas,
  T200_fact.f200_id as f_codigo_id,
 ABS(NVL(SALDO.saldo,0)) saldo,
-(select ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
+(select Rownum, ABS(NVL(ds.saldo,0)) from DETALLE_FACTURA df
 inner join DETALLE_SALDO ds on ds.CODIGO_AFILIADO = df.AFILIADO
-where FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
+where Rownum = 1
+and FACTURA =T350_Fact.F350_Consec_Docto) saldo_tabla
 
 
 
