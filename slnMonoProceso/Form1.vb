@@ -542,7 +542,12 @@ Public Class Form1
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "FechaHasta"), fechaHasta)
             DocPersonalizado.Add(campoString)
-            campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
+
+            If IsChecked Then
+                campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), AfiliadoTabla.Tables(0).Rows(0).Item("AFILIADO").ToString)
+            Else
+                campoString = New XElement("campoString", New XAttribute("name", "f_codigo_id"), data.Item("f_codigo_id").ToString)
+            End If
             DocPersonalizado.Add(campoString)
 
             'cambio con logica especial 20201127
