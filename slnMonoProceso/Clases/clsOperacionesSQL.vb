@@ -234,10 +234,12 @@ Public Class clsOperacionesSQL
                                            case when f320_vlr_imp > 0 then to_char(ABS(f320_vlr_imp * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ))) else  ' ' end f_MontoImp,
                                            ABS((f320_vlr_bruto - ( f320_vlr_dscto_1 + f320_vlr_dscto_2 ) ) * ( CASE WHEN f311_ind_nat <> 1 THEN -1 ELSE 1 END ) * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END )) f_MontoTotalItem,
                                            (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE
-                                          where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar,
+                                          where AFILIADO = f200_id and rtrim(f320_id_servicio) = ""servicio_id""
+                                           and rownum = 1) porcentaje_aplicar,
                                           (select distinct ""porcentaje_aplicar""  from DETALLE_PORCENTAJE dp
                                           Inner join DETALLE_FACTURA df on df.AFILIADO=dp.AFILIADO
-                                          where Rownum = 1 and df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id"") porcentaje_aplicar_tabla
+                                          where Rownum = 1 and df.FACTURA = t350_fact.f350_consec_docto and rtrim(f320_id_servicio) = ""servicio_id""
+                                          and rownum = 1) porcentaje_aplicar_tabla
       
                                         from  t350_co_docto_contable t350_fact
                                         INNER JOIN T311_CO_DOCTO_FACTURA_SERV ON F350_ROWID=F311_ROWID_DOCTO
@@ -260,7 +262,7 @@ Public Class clsOperacionesSQL
             da.Fill(ds, "FactDetailXML")
 
         Catch ex As Exception
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
         Finally
             oracleconnetion.Close()
         End Try
