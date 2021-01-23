@@ -109,13 +109,13 @@ Public Class clsOperacionesSQL
 			                                  when 27 then case T350_Fact.F350_Id_Tipo_Docto
 								                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
 						                                when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-						                                when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+						                                when 'OPE' then '4cf093fbbfcd3caeb45cd6a7ae25cb6ac0f13602dcbaf3240828f0bf327911e3'
 						                                else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
 						                                   end
 			                                  when 22 then case T350_Fact.F350_Id_Tipo_Docto
 								                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
 						                                when 'FCE' then 'd14f55644f4b0578f95656d050880823eb6417eb12c462728304fcd2ea1d9048'
-						                                when 'OPE' then 'c52662bd7a9c4bd6598a6ada6c3189524c52dc5cddf5b21b620213f231533e32'
+						                                when 'OPE' then '4cf093fbbfcd3caeb45cd6a7ae25cb6ac0f13602dcbaf3240828f0bf327911e3'
 						                                else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
 						                                   end
 			                                  when 149 then '20191'
