@@ -104,7 +104,7 @@ Public Class clsOperacionesSQL
 		                                f022_nro_resolucion f_CAENroResolucion,
 		                                f022_fecha_resolucion f_CAEFechaResolucion,
 		
-		                                case f350_id_clase_docto
+		                                /*case f350_id_clase_docto
 				                                  when 25 then '20191'
 			                                  when 27 then case T350_Fact.F350_Id_Tipo_Docto
 								                                when 'COB' then '5602aec7666f7eb1e5c71a4e981ae679f7ea1e51da7816a6f62e9178c726a4b8'
@@ -119,7 +119,9 @@ Public Class clsOperacionesSQL
 						                                else 'fc8eac422eba16e22ffd8c6f94b3f40a6e38162c'
 						                                   end
 			                                  when 149 then '20191'
-			                                 end f_CAEClaveTC,
+			                                 end f_CAEClaveTC,*/
+
+                                        f021_notas f_CAEClaveTC,
 
 		                                TO_CHAR(f022_fecha_resolucion_vcto, 'YYYY-MM-DD') f_CAEPlazo,
                                 case f350_id_clase_docto
@@ -166,6 +168,7 @@ Public Class clsOperacionesSQL
 
 
                                 From  T350_Co_Docto_Contable T350_Fact
+                                inner join t021_mm_tipos_documentos on T350_Fact.F350_Id_Tipo_Docto = f021_id
                                 Inner Join T311_Co_Docto_Factura_Serv On F350_Rowid=F311_Rowid_Docto
                                 Inner Join T200_Mm_Terceros T200_Fact On T200_Fact.F200_Rowid = F311_Rowid_Tercero
                                 Inner Join T201_Mm_Clientes T201_Fact On T201_Fact.F201_Rowid_Tercero = F311_Rowid_Tercero

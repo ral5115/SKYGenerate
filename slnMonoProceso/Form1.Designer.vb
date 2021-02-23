@@ -207,7 +207,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TxtDesde)
         Me.Controls.Add(Me.btnGenerar)
         Me.Name = "Form1"
-        Me.Text = "Generador XML  (v1.1.22.2021)"
+        Me.Text = "Generador XML  (v1.2.23.2021)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
