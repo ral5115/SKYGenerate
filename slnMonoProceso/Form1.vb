@@ -435,6 +435,11 @@ Public Class Form1
                     Dim CodigoLoc As XElement = New XElement("CodigoLoc", " ")
                     LocalItem.Add(CodigoLoc)
 
+                    If item.Item("f_VlrCodigo").ToString = "VS100157" Then
+                        Dim ECB08 As XElement = New XElement("ECB08", "1")
+                        Detalle.Add(ECB08)
+                    End If
+
                 Next
             End If
 #End Region
