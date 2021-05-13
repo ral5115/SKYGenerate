@@ -226,7 +226,7 @@ Public Class clsOperacionesSQL
                                              t350_fact.f350_id_tipo_docto f_Tipo,
                                              t350_fact.f350_consec_docto f_Numero,
                                            'INT' f_TpoCodigo,
-                                           f189_id f_VlrCodigo,
+                                           ltrim(rtrim(f189_id)) f_VlrCodigo,
                                            f189_descripcion f_DscItem,
                                            f320_cantidad * ( CASE WHEN f320_ind_naturaleza = f145_ind_naturaleza THEN 1 ELSE -1 END ) f_QtyItem,
                                            '' f_UnmdItem,
