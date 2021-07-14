@@ -605,6 +605,8 @@ Public Class Form1
             DocPersonalizado.Add(campoString)
             campoString = New XElement("campoString", New XAttribute("name", "f_tot_cheque_pos"), valorChePos.Item("valor").ToString)
             DocPersonalizado.Add(campoString)
+            campoString = New XElement("campoString", New XAttribute("name", "f_email_cli"), data.Item("f_ContactoReceptorEmails").ToString)
+            DocPersonalizado.Add(campoString)
 
             'Dim ImpresionDetalle As XElement = New XElement("ImpresionDetalle")
             '    DocPersonalizado.Add(ImpresionDetalle)
@@ -625,7 +627,7 @@ Public Class Form1
 #End Region
 
             'MsgBox("va a guardar en X")
-            xml.Save("C:\Users\Public\Documents\" & data.Item("tipo_docto").ToString & data.Item("f_Numero").ToString & ".xml")
+            xml.Save("C:\Users\Public\Documents\Pruebas\" & data.Item("tipo_docto").ToString & data.Item("f_Numero").ToString & ".xml")
 
         Catch ex As Exception
             MsgBox(ex.Message)

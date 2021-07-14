@@ -56,7 +56,6 @@ C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\bin\Re
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\bin\Release\slnMonoProceso.exe
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\bin\Release\slnMonoProceso.pdb
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\bin\Release\slnMonoProceso.xml
-C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\obj\Release\slnMonoProceso.vbprojAssemblyReference.cache
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\obj\Release\slnMonoProceso.Form1.resources
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\obj\Release\slnMonoProceso.Resources.resources
 C:\Users\USER\Desktop\Utiles\Nueva carpeta\Git\SKYGenerate\slnMonoProceso\obj\Release\slnMonoProceso.vbproj.GenerateResource.cache

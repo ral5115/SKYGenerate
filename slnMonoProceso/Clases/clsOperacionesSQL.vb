@@ -70,7 +70,7 @@ Public Class clsOperacionesSQL
 		                                T200_fact.f200_nit f_NroDocRecep,
 		                                T200_fact.f200_razon_social f_NmbRecep,
 		                                T200_fact.f200_razon_social  f_PrimerNombre,
-		                                T285_Cont.f015_email eMail,
+                                        T285_Cont.f015_email eMail,
 		                                T285_Cont.f015_telefono Telefono,
 		                                T285_Cont.f015_fax Fax,
 		                                'TpoObl' f_TpoCdgIntRecep,
@@ -83,7 +83,11 @@ Public Class clsOperacionesSQL
 		                                T200_Fact.f200_ind_tipo_tercero f_ContactoReceptorTipo,
 		                                nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto) f_ContactoReceptorCont,  
                                         SUBSTR(nvl(T200_fact.f200_razon_social,T200_ContCli.f015_contacto),0,80) f_ContactoReceptorDesc, 
-		                                f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1) f_ContactoReceptorEmail,
+                                        case TO_NUMBER(INSTR(f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1),';'))
+                                         when 0 then SUBSTR(f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1),0)
+                                         else SUBSTR(f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1),0,TO_NUMBER(INSTR(f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1),';')) - 1)
+                                           end  f_ContactoReceptorEmail,
+		                                f_generico_hallar_movto_ent(f350_id_cia,T201_fact.F201_Rowid_Movto_Entidad,'EUNOECO011','co011_correo_fe',1) f_ContactoReceptorEmails,
 		                                T200_ContCli.f015_telefono f_ContactoReceptorTel,
 		                                T200_ContCli.f015_fax f_ContactoReceptorFax,
 		                                F311_Id_Moneda_Docto F_Moneda,
